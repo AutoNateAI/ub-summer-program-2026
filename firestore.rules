@@ -1,0 +1,25 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function ownsStudent(studentId) {
+      return signedIn() && request.auth.uid == studentId;
+    }
+
+    match /cohorts/{cohortId}/students/{studentId} {
+      allow read, create, update: if ownsStudent(studentId);
+
+      match /programIdeas/{ideaId} {
+        allow read, create, update, delete: if ownsStudent(studentId);
+      }
+
+      match /homework/{submissionId} {
+        allow read, create, update, delete: if ownsStudent(studentId);
+      }
+    }
+  }
+}
