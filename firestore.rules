@@ -10,8 +10,57 @@ service cloud.firestore {
       return signedIn() && request.auth.uid == studentId;
     }
 
+    function ownsExisting() {
+      return signedIn() && resource.data.ownerUid == request.auth.uid;
+    }
+
+    function ownsIncoming() {
+      return signedIn() && request.resource.data.ownerUid == request.auth.uid;
+    }
+
+    match /opportunityReports/{reportId} {
+      allow create: if ownsIncoming();
+      allow read, update, delete: if ownsExisting();
+    }
+
+    match /campaigns/{campaignId} {
+      allow create: if ownsIncoming();
+      allow read, update, delete: if ownsExisting();
+    }
+
+    match /touchpoints/{touchpointId} {
+      allow create: if ownsIncoming();
+      allow read, update, delete: if ownsExisting();
+    }
+
+    match /savedFilters/{filterId} {
+      allow create: if ownsIncoming();
+      allow read, update, delete: if ownsExisting();
+    }
+
+    match /contacts/{contactId} {
+      allow create: if ownsIncoming();
+      allow read, update, delete: if ownsExisting();
+    }
+
+    match /mapSnapshots/{snapshotId} {
+      allow create: if ownsIncoming();
+      allow read, update, delete: if ownsExisting();
+    }
+
+    match /githubRepos/{repoId} {
+      allow read: if signedIn();
+      allow write: if false;
+    }
+
+    match /aiWorkflows/{workflowId} {
+      allow read: if signedIn();
+      allow write: if false;
+    }
+
     match /cohorts/{cohortId}/students/{studentId} {
       allow read, create, update: if ownsStudent(studentId);
+      allow delete: if false;
 
       match /programIdeas/{ideaId} {
         allow read, create, update, delete: if ownsStudent(studentId);
@@ -19,6 +68,11 @@ service cloud.firestore {
 
       match /homework/{submissionId} {
         allow read, create, update, delete: if ownsStudent(studentId);
+      }
+
+      match /stats/{statId} {
+        allow read: if ownsStudent(studentId);
+        allow write: if false;
       }
     }
   }
