@@ -238,6 +238,7 @@ function Portal() {
         <div className="mx-auto max-w-[1280px] space-y-6 p-4 sm:p-8 lg:p-10">
           {activeView === "curriculum" ? (
             <CourseDay
+              key={activeDay.id}
               day={activeDay}
               nextDay={nextDay}
               homeworkText={homeworkText}
