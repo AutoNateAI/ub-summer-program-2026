@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { AuthGate } from "@/components/AuthGate";
 import { useAuth } from "@/components/AuthProvider";
+import { CourseDay, courseDays } from "@/components/CourseDay";
 import {
   addHomeworkSubmission,
   addProgramIdea,
@@ -33,12 +34,12 @@ import {
 const roles = ["Research Lead", "Program Lead", "Design Lead", "Technology Lead"];
 
 const navItems = [
-  ["Dashboard", Home],
-  ["Curriculum", BookOpen],
-  ["Explore Data", Database],
-  ["Team Workspace", Users],
-  ["AI Lab", Bot],
-  ["Submissions", ClipboardList],
+  ["dashboard", "Dashboard", Home],
+  ["curriculum", "Curriculum", BookOpen],
+  ["data", "Explore Data", Database],
+  ["workspace", "Team Workspace", Users],
+  ["ai", "AI Lab", Bot],
+  ["submissions", "Submissions", ClipboardList],
 ] as const;
 
 const dataSources = [
@@ -46,13 +47,6 @@ const dataSources = [
   ["Grand Rapids Chamber", "Partner and employer directory", true],
   ["City Commission Agendas", "Meetings and civic priorities", false],
   ["Board of Education", "School system initiatives", false],
-] as const;
-
-const curriculum = [
-  ["Day 1", "How Communities Work", "Data, budgets, boards, initiatives, and local money flow."],
-  ["Day 2", "Roles + Tools Lab", "Researcher, designer, developer, and communicator workflows."],
-  ["Day 3", "Proposal Studio", "Convert homework insights into a team-ready program proposal."],
-  ["Day 4", "Opportunity Pitch", "Share proposals, vote, and form teams around strongest ideas."],
 ] as const;
 
 function initials(value?: string | null) {
@@ -73,8 +67,16 @@ function Portal() {
   const [homeworkText, setHomeworkText] = useState("");
   const [savingIdea, setSavingIdea] = useState(false);
   const [savingHomework, setSavingHomework] = useState(false);
+  const [activeView, setActiveView] = useState<(typeof navItems)[number][0]>("dashboard");
+  const [activeDayId, setActiveDayId] = useState(courseDays[0].id);
 
   const displayName = user?.displayName || user?.email || "Student";
+  const activeDayIndex = Math.max(
+    0,
+    courseDays.findIndex((day) => day.id === activeDayId),
+  );
+  const activeDay = courseDays[activeDayIndex] || courseDays[0];
+  const nextDay = courseDays[activeDayIndex + 1];
   const currentRole = useMemo(() => {
     if (!profile?.uid) return roles[0];
     return roles[profile.uid.charCodeAt(0) % roles.length];
@@ -98,7 +100,7 @@ function Portal() {
     setSavingHomework(true);
     try {
       await addHomeworkSubmission(user, {
-        title: "Day 1 Community Systems Reflection",
+        title: activeView === "curriculum" ? activeDay.homeworkTitle : "Dashboard Homework Draft",
         body: homeworkText,
       });
       setHomeworkText("");
@@ -125,21 +127,54 @@ function Portal() {
         </div>
 
         <nav className="flex-1 space-y-1 overflow-y-auto">
-          {navItems.map(([label, Icon], index) => (
-            <button
-              key={label}
-              className={`flex w-full items-center gap-3 rounded-r-lg px-4 py-3 text-left text-sm transition ${
-                index === 0
-                  ? "border-l-4 border-[#3fddc2] bg-[#2e3d48] font-black text-[#61f7db]"
-                  : "text-[#98a7b5] hover:bg-[#2e3d48]/60 hover:text-white"
-              }`}
-            >
-              <Icon className="h-5 w-5" />
-              <span className="font-mono text-[12px] uppercase tracking-[0.05em]">
-                {label}
-              </span>
-            </button>
-          ))}
+          {navItems.map(([view, label, Icon]) => {
+            const isActive = activeView === view;
+
+            return (
+              <div key={label}>
+                <button
+                  onClick={() => setActiveView(view)}
+                  className={`flex w-full items-center gap-3 rounded-r-lg px-4 py-3 text-left text-sm transition ${
+                    isActive
+                      ? "border-l-4 border-[#3fddc2] bg-[#2e3d48] font-black text-[#61f7db]"
+                      : "text-[#98a7b5] hover:bg-[#2e3d48]/60 hover:text-white"
+                  }`}
+                >
+                  <Icon className="h-5 w-5" />
+                  <span className="font-mono text-[12px] uppercase tracking-[0.05em]">
+                    {label}
+                  </span>
+                </button>
+
+                {view === "curriculum" && activeView === "curriculum" && (
+                  <div className="ml-8 mt-2 space-y-1 border-l border-[#3a4954] pb-2 pl-3">
+                    {courseDays.map((day) => {
+                      const dayActive = activeDayId === day.id;
+
+                      return (
+                        <button
+                          key={day.id}
+                          onClick={() => setActiveDayId(day.id)}
+                          className={`w-full rounded-lg px-3 py-2 text-left transition ${
+                            dayActive
+                              ? "bg-[#3fddc2] text-[#00201b]"
+                              : "text-[#98a7b5] hover:bg-[#2e3d48] hover:text-white"
+                          }`}
+                        >
+                          <span className="block font-mono text-[10px] font-black uppercase tracking-[0.08em]">
+                            {day.label}
+                          </span>
+                          <span className="mt-0.5 block truncate text-xs font-semibold">
+                            {day.title}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </nav>
 
         <div className="mt-4 border-t border-[#2e3d48] pt-4">
@@ -171,20 +206,6 @@ function Portal() {
                 placeholder="Search research, data, teams..."
               />
             </div>
-            <nav className="hidden items-center gap-6 xl:flex">
-              {["Day 1", "Day 2", "Day 3"].map((day, index) => (
-                <button
-                  key={day}
-                  className={`py-5 font-mono text-[12px] uppercase tracking-[0.05em] ${
-                    index === 0
-                      ? "border-b-2 border-[#006b5c] font-black text-[#006b5c]"
-                      : "text-[#43474b] hover:text-[#182732]"
-                  }`}
-                >
-                  {day}
-                </button>
-              ))}
-            </nav>
           </div>
           <div className="flex items-center gap-3">
             <button
@@ -215,6 +236,20 @@ function Portal() {
         </header>
 
         <div className="mx-auto max-w-[1280px] space-y-6 p-4 sm:p-8 lg:p-10">
+          {activeView === "curriculum" ? (
+            <CourseDay
+              day={activeDay}
+              nextDay={nextDay}
+              homeworkText={homeworkText}
+              savingHomework={savingHomework}
+              onHomeworkTextChange={setHomeworkText}
+              onSubmitHomework={submitHomework}
+              onNextDay={() => {
+                if (nextDay) setActiveDayId(nextDay.id);
+              }}
+            />
+          ) : (
+            <>
           <section className="relative overflow-hidden rounded-xl bg-[#2e3d48] p-6 text-white sm:p-8">
             <div className="relative z-10 max-w-3xl">
               <span className="inline-block rounded-full bg-[#61f7db] px-3 py-1 font-mono text-[10px] font-black uppercase tracking-[0.08em] text-[#007060]">
@@ -228,7 +263,13 @@ function Portal() {
                 and how AI can turn public data into a real local program.
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-3">
-                <button className="flex items-center gap-2 rounded-lg bg-[#006b5c] px-5 py-3 text-sm font-black text-white transition hover:bg-[#005045]">
+                <button
+                  onClick={() => {
+                    setActiveView("curriculum");
+                    setActiveDayId(courseDays[0].id);
+                  }}
+                  className="flex items-center gap-2 rounded-lg bg-[#006b5c] px-5 py-3 text-sm font-black text-white transition hover:bg-[#005045]"
+                >
                   Resume Day 1 Module <ArrowRight className="h-4 w-4" />
                 </button>
                 <div className="flex items-center gap-2 rounded-lg bg-[#182732] px-4 py-3">
@@ -358,14 +399,23 @@ function Portal() {
                   <BookOpen className="h-5 w-5 text-[#006b5c]" />
                 </div>
                 <div className="mt-5 grid gap-4 md:grid-cols-4">
-                  {curriculum.map(([day, title, body]) => (
-                    <div key={day} className="rounded-lg bg-[#f2f4f5] p-4">
+                  {courseDays.map((day) => (
+                    <button
+                      key={day.id}
+                      onClick={() => {
+                        setActiveView("curriculum");
+                        setActiveDayId(day.id);
+                      }}
+                      className="rounded-lg bg-[#f2f4f5] p-4 text-left transition hover:bg-[#eceeef] hover:shadow-md"
+                    >
                       <p className="font-mono text-[11px] font-black uppercase text-[#006b5c]">
-                        {day}
+                        {day.label}
                       </p>
-                      <p className="mt-2 text-sm font-black">{title}</p>
-                      <p className="mt-2 text-xs leading-5 text-[#43474b]">{body}</p>
-                    </div>
+                      <p className="mt-2 text-sm font-black">{day.title}</p>
+                      <p className="mt-2 text-xs leading-5 text-[#43474b]">
+                        {day.deliverable}
+                      </p>
+                    </button>
                   ))}
                 </div>
               </div>
@@ -489,6 +539,8 @@ function Portal() {
             <span>AutoNateAI Civic Scholar Portal</span>
             <span>Grand Rapids Community Innovation Studio</span>
           </footer>
+            </>
+          )}
         </div>
       </section>
     </main>
