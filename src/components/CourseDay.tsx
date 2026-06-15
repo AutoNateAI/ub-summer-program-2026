@@ -598,7 +598,7 @@ export function CourseDay({
 
   return (
     <div className="space-y-8">
-      <section>
+      <section className="max-w-5xl">
         <div className="mb-3 flex flex-wrap items-center gap-2">
           <span className="rounded bg-[#006b5c]/15 px-3 py-1 font-mono text-[11px] font-black uppercase tracking-[0.06em] text-[#006b5c]">
             {day.module}
@@ -613,45 +613,48 @@ export function CourseDay({
         <h2 className="font-[Hanken_Grotesk,Inter,sans-serif] text-4xl font-black leading-tight text-[#182732] sm:text-5xl">
           {day.label}: {day.title}
         </h2>
-        <p className="mt-3 max-w-3xl text-base leading-7 text-[#43474b]">
+        <p className="mt-4 max-w-4xl text-lg leading-8 text-[#43474b]">
           {day.subtitle}
         </p>
       </section>
 
-      <section className="grid grid-cols-12 gap-6">
-        <div className="col-span-12 space-y-6 lg:col-span-8">
+      <section className="grid grid-cols-12 gap-8">
+        <div className="col-span-12 space-y-8 xl:col-span-9">
           <div className="overflow-hidden rounded-xl border border-[#c3c7cb] bg-white shadow-sm">
-            <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-[#182732] p-6 text-white sm:p-10">
+            <div className="relative flex min-h-[540px] items-center justify-center overflow-hidden bg-[#182732] p-8 text-white lg:min-h-[620px] xl:p-12">
               <div className="absolute inset-0 opacity-20">
-                <div className="absolute left-10 top-10 h-28 w-28 rounded-xl border border-[#64fade]/70" />
-                <div className="absolute bottom-12 right-14 h-40 w-40 rounded-xl border border-[#64fade]/50" />
-                <div className="absolute left-1/3 top-1/3 h-2 w-56 bg-[#64fade]" />
-                <div className="absolute bottom-1/4 left-1/4 h-2 w-40 bg-[#EEB111]" />
+                <div className="absolute left-12 top-16 h-36 w-36 rounded-xl border border-[#64fade]/70" />
+                <div className="absolute bottom-20 right-20 h-52 w-52 rounded-xl border border-[#64fade]/50" />
+                <div className="absolute left-1/3 top-1/2 h-3 w-72 bg-[#64fade]" />
+                <div className="absolute bottom-1/4 left-1/4 h-3 w-52 bg-[#EEB111]" />
               </div>
               <div className="relative z-10 flex h-full w-full flex-col">
                 <div className="flex items-center justify-between gap-4">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-[#3fddc2] px-4 py-2 font-mono text-[11px] font-black uppercase tracking-[0.08em] text-[#00201b]">
-                  <Play className="h-3 w-3" />
+                  <span className="inline-flex items-center gap-2 rounded-full bg-[#3fddc2] px-5 py-3 font-mono text-[11px] font-black uppercase tracking-[0.08em] text-[#00201b]">
+                    <Play className="h-3 w-3" />
                     {activeSlide.eyebrow}
                   </span>
-                  <span className="rounded-full bg-white/10 px-3 py-1 font-mono text-[11px] font-black uppercase tracking-[0.08em] text-[#b9c9d6]">
+                  <span className="rounded-full bg-white/10 px-4 py-2 font-mono text-[11px] font-black uppercase tracking-[0.08em] text-[#b9c9d6]">
                     Slide {slideNumber} / {slides.length}
                   </span>
                 </div>
 
-                <div className="flex flex-1 items-center">
-                  <div className="max-w-3xl">
-                    <p className="font-mono text-[12px] font-black uppercase tracking-[0.1em] text-[#64fade]">
+                <div className="flex flex-1 items-center py-10">
+                  <div className="max-w-5xl">
+                    <p className="max-w-4xl font-mono text-[13px] font-black uppercase leading-6 tracking-[0.1em] text-[#64fade]">
                       {activeSlide.subtitle}
                     </p>
-                    <h3 className="mt-4 font-[Hanken_Grotesk,Inter,sans-serif] text-3xl font-black leading-tight sm:text-5xl">
+                    <h3 className="mt-5 max-w-4xl font-[Hanken_Grotesk,Inter,sans-serif] text-4xl font-black leading-[1.05] sm:text-5xl xl:text-6xl">
                       {activeSlide.title}
-                </h3>
-                    <div className="mt-6 grid gap-3">
+                    </h3>
+                    <div className="mt-8 grid gap-4">
                       {activeSlide.bullets.map((bullet) => (
-                        <div key={bullet} className="flex gap-3 rounded-lg bg-white/10 p-3 backdrop-blur">
-                          <CheckCircle2 className="mt-0.5 h-5 w-5 flex-none text-[#3fddc2]" />
-                          <p className="text-sm font-semibold leading-6 text-[#eff1f2]">
+                        <div
+                          key={bullet}
+                          className="flex gap-4 rounded-xl bg-white/10 p-4 backdrop-blur"
+                        >
+                          <CheckCircle2 className="mt-0.5 h-6 w-6 flex-none text-[#3fddc2]" />
+                          <p className="text-base font-semibold leading-7 text-[#eff1f2]">
                             {bullet}
                           </p>
                         </div>
@@ -660,22 +663,22 @@ export function CourseDay({
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between gap-3">
+                <div className="grid grid-cols-[48px_1fr_48px] items-center gap-5">
                   <button
                     onClick={goToPreviousSlide}
                     disabled={slideNumber === 1}
-                    className="grid h-10 w-10 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white/20 disabled:opacity-35"
+                    className="grid h-12 w-12 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white/20 disabled:opacity-35"
                     aria-label="Previous slide"
                   >
                     <ChevronLeft className="h-5 w-5" />
                   </button>
-                  <p className="line-clamp-2 max-w-xl text-center text-xs leading-5 text-[#b9c9d6]">
+                  <p className="text-center text-sm leading-6 text-[#b9c9d6]">
                     Speaker note: {activeSlide.note}
                   </p>
                   <button
                     onClick={goToNextSlide}
                     disabled={slideNumber === slides.length}
-                    className="grid h-10 w-10 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white/20 disabled:opacity-35"
+                    className="grid h-12 w-12 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white/20 disabled:opacity-35"
                     aria-label="Next slide"
                   >
                     <ChevronRight className="h-5 w-5" />
@@ -683,17 +686,17 @@ export function CourseDay({
                 </div>
               </div>
             </div>
-            <div className="border-t border-[#c3c7cb] bg-[#f2f4f5] px-4 py-4 sm:px-6">
+            <div className="border-t border-[#c3c7cb] bg-[#f2f4f5] px-5 py-5 sm:px-7">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <div className="flex items-center gap-2 text-sm font-semibold text-[#43474b]">
-                <Sparkles className="h-4 w-4 text-[#006b5c]" />
+                <div className="flex items-center gap-2 text-sm font-semibold text-[#43474b]">
+                  <Sparkles className="h-4 w-4 text-[#006b5c]" />
                   Interactive deck integrated into the course window
-              </div>
-              <span className="font-mono text-[11px] uppercase tracking-[0.06em] text-[#74777c]">
+                </div>
+                <span className="font-mono text-[11px] uppercase tracking-[0.06em] text-[#74777c]">
                   {slides.length} slides for {day.label}
-              </span>
+                </span>
               </div>
-              <div className="mt-4 grid gap-2 sm:grid-cols-7">
+              <div className="mt-5 flex gap-3 overflow-x-auto pb-2">
                 {slides.map((slide, index) => {
                   const isActive = index === slideNumber - 1;
 
@@ -701,7 +704,7 @@ export function CourseDay({
                     <button
                       key={`${slide.eyebrow}-${slide.title}`}
                       onClick={() => setActiveSlideIndex(index)}
-                      className={`min-h-20 rounded-lg border p-2 text-left transition ${
+                      className={`min-h-28 w-40 flex-none rounded-xl border p-4 text-left transition ${
                         isActive
                           ? "border-[#006b5c] bg-white shadow-sm"
                           : "border-[#c3c7cb] bg-[#eceeef] hover:border-[#006b5c]"
@@ -710,7 +713,7 @@ export function CourseDay({
                       <span className="font-mono text-[10px] font-black uppercase text-[#006b5c]">
                         {index + 1}
                       </span>
-                      <span className="mt-1 line-clamp-2 block text-[11px] font-bold leading-4 text-[#182732]">
+                      <span className="mt-2 line-clamp-3 block text-sm font-bold leading-5 text-[#182732]">
                         {slide.title}
                       </span>
                     </button>
@@ -780,7 +783,7 @@ export function CourseDay({
           </div>
         </div>
 
-        <aside className="col-span-12 space-y-6 lg:col-span-4">
+        <aside className="col-span-12 space-y-6 xl:col-span-3">
           <div className="overflow-hidden rounded-xl bg-[#182732] p-6 text-white">
             <div className="mb-3 flex items-center gap-2 text-[#00F0FF]">
               <Bot className="h-5 w-5" />
