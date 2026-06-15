@@ -43,15 +43,24 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const timeout = window.setTimeout(() => setLoading(false), 2500);
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      window.clearTimeout(timeout);
       setUser(currentUser);
       setLoading(false);
       if (currentUser) {
-        await ensureUserProfile(currentUser);
+        try {
+          await ensureUserProfile(currentUser);
+        } catch (error) {
+          console.error("Unable to sync student profile", error);
+        }
       }
     });
 
-    return unsubscribe;
+    return () => {
+      window.clearTimeout(timeout);
+      unsubscribe();
+    };
   }, []);
 
   const value = useMemo<AuthContextValue>(
