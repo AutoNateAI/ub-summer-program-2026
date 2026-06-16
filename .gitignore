@@ -21,6 +21,7 @@
 
 # production
 /build
+/assignments/build/
 
 # misc
 .DS_Store

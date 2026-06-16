@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "UB Community Innovation Portal",
+  title: "GVSU TRIO Upward Bound Resource Library",
   description:
-    "An AI-powered workspace for the 2026 Upward Bound summer community innovation program.",
+    "Download notes, assignments, and pre-class materials for the GVSU TRIO Upward Bound summer program, hosted by AutoNateAI.",
 };
 
 export default function RootLayout({
