@@ -1,0 +1,111 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b2231"/>
+      <stop offset="0.48" stop-color="#123d50"/>
+      <stop offset="1" stop-color="#071821"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#ffd56a"/>
+      <stop offset="1" stop-color="#d99a2b"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#7ff8ef"/>
+      <stop offset="1" stop-color="#277c86"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(860 286) rotate(90) scale(270 360)">
+      <stop stop-color="#48f5dd" stop-opacity="0.62"/>
+      <stop offset="0.45" stop-color="#2ca6a7" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#0b2231" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.41 0 0 0 0 1 0 0 0 0 0.87 0 0 0 0.8 0"/>
+      <feBlend in="SourceGraphic"/>
+    </filter>
+    <filter id="goldGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 1 0 0 0 0 0.76 0 0 0 0 0.26 0 0 0 0.8 0"/>
+      <feBlend in="SourceGraphic"/>
+    </filter>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" stroke="#8de9e2" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect x="566" y="14" width="620" height="590" rx="42" fill="url(#glow)"/>
+
+  <path d="M58 492C186 428 303 441 439 481C583 523 707 538 858 472C977 420 1077 412 1160 446" stroke="#48f5dd" stroke-opacity="0.28" stroke-width="3"/>
+  <path d="M570 141C675 94 787 91 904 128C1006 160 1089 150 1164 116" stroke="#d99a2b" stroke-opacity="0.35" stroke-width="3"/>
+
+  <g opacity="0.98">
+    <path d="M650 455V247H700V455H650Z" fill="#102b39" stroke="#73d9d5" stroke-opacity="0.32"/>
+    <path d="M716 455V177H774V455H716Z" fill="#123344" stroke="#73d9d5" stroke-opacity="0.32"/>
+    <path d="M789 455V222H850V455H789Z" fill="#0f2b3a" stroke="#73d9d5" stroke-opacity="0.32"/>
+    <path d="M866 455V135H941V455H866Z" fill="#133d50" stroke="#73d9d5" stroke-opacity="0.32"/>
+    <path d="M958 455V205H1016V455H958Z" fill="#0e2a38" stroke="#73d9d5" stroke-opacity="0.32"/>
+    <path d="M1032 455V260H1101V455H1032Z" fill="#123647" stroke="#73d9d5" stroke-opacity="0.32"/>
+    <path d="M612 455H1130" stroke="#7ff8ef" stroke-opacity="0.35" stroke-width="2"/>
+  </g>
+
+  <g opacity="0.72">
+    <rect x="667" y="271" width="10" height="20" rx="2" fill="#ffd56a"/>
+    <rect x="733" y="209" width="10" height="22" rx="2" fill="#7ff8ef"/>
+    <rect x="807" y="253" width="10" height="20" rx="2" fill="#ffd56a"/>
+    <rect x="886" y="165" width="10" height="24" rx="2" fill="#7ff8ef"/>
+    <rect x="917" y="202" width="10" height="18" rx="2" fill="#ffd56a"/>
+    <rect x="978" y="237" width="10" height="18" rx="2" fill="#7ff8ef"/>
+    <rect x="1055" y="291" width="10" height="18" rx="2" fill="#ffd56a"/>
+  </g>
+
+  <g filter="url(#softGlow)">
+    <path d="M642 394C718 337 788 315 874 326C958 336 1027 296 1094 216" stroke="#62f7db" stroke-width="5" stroke-linecap="round"/>
+    <path d="M662 329C727 286 792 265 856 273C936 284 1010 247 1060 181" stroke="#62f7db" stroke-opacity="0.54" stroke-width="3" stroke-linecap="round"/>
+    <path d="M706 512C770 465 842 447 928 463C1004 477 1064 451 1111 404" stroke="#62f7db" stroke-opacity="0.46" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <g filter="url(#goldGlow)">
+    <circle cx="642" cy="394" r="13" fill="url(#gold)"/>
+    <circle cx="874" cy="326" r="13" fill="url(#gold)"/>
+    <circle cx="1094" cy="216" r="13" fill="url(#gold)"/>
+    <circle cx="856" cy="273" r="9" fill="#7ff8ef"/>
+    <circle cx="928" cy="463" r="10" fill="#7ff8ef"/>
+    <circle cx="1111" cy="404" r="10" fill="url(#gold)"/>
+  </g>
+
+  <g transform="translate(730 340)">
+    <ellipse cx="98" cy="154" rx="156" ry="24" fill="#06141c" opacity="0.48"/>
+    <path d="M92 52C125 50 153 77 153 114V182H34V113C34 79 60 54 92 52Z" fill="#17384a"/>
+    <circle cx="94" cy="28" r="30" fill="#c98745"/>
+    <path d="M65 21C70 -1 89 -13 111 -5C130 2 135 17 129 35C118 23 101 16 65 21Z" fill="#10212d"/>
+    <path d="M47 190L66 95H122L145 190H112L103 132H84L75 190H47Z" fill="#1f5365"/>
+    <path d="M151 99L210 67" stroke="#ffd56a" stroke-width="14" stroke-linecap="round"/>
+    <rect x="204" y="43" width="56" height="42" rx="8" transform="rotate(10 204 43)" fill="#0a1821" stroke="#7ff8ef" stroke-width="3"/>
+    <path d="M197 190L176 104H219L243 190H197Z" fill="#1a4759"/>
+    <circle cx="261" cy="72" r="19" fill="#7f4d34"/>
+    <path d="M240 190L251 105H286L309 190H276L268 137H259L254 190H240Z" fill="#194154"/>
+    <path d="M47 102L3 71" stroke="#62f7db" stroke-width="13" stroke-linecap="round"/>
+    <circle cx="-12" cy="61" r="20" fill="#6f432f"/>
+    <path d="M-46 190L-31 104H10L32 190H0L-8 137H-17L-23 190H-46Z" fill="#163d50"/>
+  </g>
+
+  <g>
+    <rect x="58" y="58" width="508" height="440" rx="28" fill="#061722" fill-opacity="0.62" stroke="#7ff8ef" stroke-opacity="0.22"/>
+    <text x="92" y="112" fill="#ffd56a" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="800" letter-spacing="1.2">GVSU TRIO UPWARD BOUND</text>
+    <text x="92" y="146" fill="#cfe8ef" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">AutoNateAI Summer Program</text>
+    <text x="92" y="229" fill="white" font-family="Inter, Arial, sans-serif" font-size="65" font-weight="900" letter-spacing="-1.5">Become</text>
+    <text x="92" y="298" fill="white" font-family="Inter, Arial, sans-serif" font-size="65" font-weight="900" letter-spacing="-1.5">the plug</text>
+    <text x="92" y="367" fill="#7ff8ef" font-family="Inter, Arial, sans-serif" font-size="65" font-weight="900" letter-spacing="-1.5">in your city.</text>
+    <rect x="92" y="398" width="78" height="7" rx="3.5" fill="url(#gold)"/>
+    <text x="92" y="446" fill="#dbe8ed" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="700">Find funded problems.</text>
+    <text x="92" y="480" fill="#dbe8ed" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="700">Connect people.</text>
+    <text x="92" y="514" fill="#dbe8ed" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="700">Build what matters.</text>
+  </g>
+
+  <g opacity="0.8">
+    <rect x="58" y="536" width="192" height="40" rx="20" fill="#d99a2b"/>
+    <text x="86" y="562" fill="#071821" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="900" letter-spacing="0.7">UB.AUTONATEAI.COM</text>
+  </g>
+</svg>
