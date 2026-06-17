@@ -6,7 +6,10 @@ import {
   GraduationCap,
   Link as LinkIcon,
   NotebookText,
+  Play,
   Sparkles,
+  Target,
+  Users,
 } from "lucide-react";
 import { availableResources, days, type ProgramDay, type Resource } from "@/lib/resources";
 
@@ -77,6 +80,50 @@ function ResourceCard({ resource }: { resource: Resource }) {
   );
 }
 
+function VideoCard({ day }: { day: ProgramDay }) {
+  if (!day.video) {
+    return (
+      <aside className="rounded-lg border border-dashed border-[#c5ced5] bg-white p-5">
+        <div className="flex items-center gap-2 text-sm font-black uppercase tracking-[0.08em] text-[#65727b]">
+          <Play className="h-4 w-4" />
+          Daily Video
+        </div>
+        <p className="mt-3 text-sm leading-6 text-[#65727b]">
+          The class replay will appear here when it is ready.
+        </p>
+      </aside>
+    );
+  }
+
+  return (
+    <aside className="overflow-hidden rounded-lg border border-[#14384c] bg-[#071821] text-white shadow-sm">
+      <div className="aspect-video bg-black">
+        <iframe
+          className="h-full w-full"
+          src={`https://www.youtube.com/embed/${day.video.youtubeId}`}
+          title={day.video.title}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        />
+      </div>
+      <div className="p-5">
+        <div className="flex items-center gap-2 text-xs font-black uppercase tracking-[0.08em] text-[#ffd56a]">
+          <Play className="h-4 w-4" />
+          Daily Video
+        </div>
+        <h4 className="mt-2 text-xl font-black">{day.video.title}</h4>
+        <p className="mt-2 text-sm leading-6 text-[#c9d9df]">{day.video.detail}</p>
+        <a
+          href={day.video.url}
+          className="mt-4 inline-flex items-center gap-2 rounded-md bg-[#7ff8ef] px-4 py-2 text-sm font-black text-[#071821] transition hover:bg-[#b2fff8]"
+        >
+          Open on YouTube
+        </a>
+      </div>
+    </aside>
+  );
+}
+
 function DaySection({
   day,
   focused,
@@ -106,10 +153,13 @@ function DaySection({
           Share {day.label}
         </a>
       </div>
-      <div className="mt-4 grid gap-3 md:grid-cols-3">
-        {day.resources.map((resource) => (
-          <ResourceCard key={`${day.label}-${resource.type}`} resource={resource} />
-        ))}
+      <div className="mt-4 grid gap-4 lg:grid-cols-[1fr_380px]">
+        <div className="grid gap-3 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+          {day.resources.map((resource) => (
+            <ResourceCard key={`${day.label}-${resource.type}`} resource={resource} />
+          ))}
+        </div>
+        <VideoCard day={day} />
       </div>
     </section>
   );
@@ -144,28 +194,66 @@ export function ResourceLibrary({ focusedDaySlug }: { focusedDaySlug?: string })
         <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end lg:py-12">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.12em] text-[#d99a2b]">
-              ub.autonateai.com
+              Become The Plug Program · ub.autonateai.com
             </p>
             <h2 className="mt-4 max-w-3xl text-4xl font-black leading-tight tracking-tight sm:text-5xl">
-              Download the notes, assignments, and pre-class materials for each program day.
+              Learn how money, people, and opportunities move through your city.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-7 text-[#dbe8ed]">
-              This page replaces the student portal. Materials will be posted here as PDFs so students can access them directly before, during, and after class.
+              This is the free resource library for the GVSU TRIO Upward Bound
+              summer experience powered by AutoNateAI. Students use this page to
+              watch the daily video, download the notes, complete the assignments,
+              and build the mindset of becoming the plug: the person who understands
+              demand, traces supply, connects partners, and helps real programs happen.
             </p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+              {[
+                ["Demand", "Spot what people need and what leaders are discussing."],
+                ["Supply", "Trace the money, departments, vendors, and programs."],
+                ["The Plug", "Connect local businesses to opportunities that already exist."],
+              ].map(([title, detail]) => (
+                <div key={title} className="rounded-md border border-white/15 bg-white/8 p-4">
+                  <p className="font-black text-[#ffd56a]">{title}</p>
+                  <p className="mt-1 text-sm leading-5 text-[#bfd2da]">{detail}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-            {[
-              ["Pre-Class Notes", "Prep before sessions"],
-              ["Class Notes", "Daily concept handouts"],
-              ["Assignments", "Homework packets"],
-            ].map(([title, detail]) => (
-              <div key={title} className="rounded-md border border-white/15 bg-white/8 p-4">
-                <p className="font-black">{title}</p>
-                <p className="mt-1 text-sm text-[#bfd2da]">{detail}</p>
-              </div>
-            ))}
+          <div className="rounded-lg border border-white/15 bg-white/8 p-5">
+            <p className="text-sm font-black uppercase tracking-[0.08em] text-[#ffd56a]">
+              How to use this page
+            </p>
+            <div className="mt-4 space-y-4">
+              {[
+                [Play, "Watch the daily video first so the class theme clicks before you start working."],
+                [BookOpen, "Download the notes and keep them open while your team researches."],
+                [FileText, "Use the assignments to turn research into a real Opportunity Report."],
+                [Users, "Share the day link with classmates, mentors, or partner orgs so they see the work in real time."],
+              ].map(([Icon, text]) => (
+                <div key={text as string} className="flex gap-3">
+                  <span className="grid h-9 w-9 flex-none place-items-center rounded-md bg-[#7ff8ef] text-[#071821]">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <p className="text-sm leading-6 text-[#dbe8ed]">{text as string}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
+      </section>
+
+      <section className="mx-auto grid max-w-7xl gap-4 px-5 py-8 sm:px-8 lg:grid-cols-3">
+        {[
+          ["For students", "You are not just doing homework. You are learning how to read the city, find demand, understand supply, and connect people to opportunity."],
+          ["For partners", "This is a live look at a youth innovation program that turns public data, AI workflows, and local networks into practical community ideas."],
+          ["For the program", "Every day builds toward students becoming opportunity brokers who can explain the problem, map the money, and assemble the partnership."],
+        ].map(([title, detail]) => (
+          <article key={title} className="rounded-lg border border-[#d4dbe0] bg-white p-5 shadow-sm">
+            <Target className="h-5 w-5 text-[#277c86]" />
+            <h3 className="mt-3 text-lg font-black text-[#14384c]">{title}</h3>
+            <p className="mt-2 text-sm leading-6 text-[#53616b]">{detail}</p>
+          </article>
+        ))}
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-8 sm:px-8">

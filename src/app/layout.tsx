@@ -14,13 +14,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ub.autonateai.com"),
-  title: "GVSU TRIO Upward Bound Resource Library",
+  title: "Become The Plug | GVSU TRIO Upward Bound",
   description:
-    "Download notes, assignments, and pre-class materials for the GVSU TRIO Upward Bound summer program, hosted by AutoNateAI.",
+    "A free live resource library where students learn demand, supply, public funding, partnerships, and how to become the plug in their city.",
   openGraph: {
-    title: "Become the plug in your city",
+    title: "Become The Plug",
     description:
-      "GVSU TRIO Upward Bound + AutoNateAI resources for finding funded problems, connecting people, and building what matters.",
+      "GVSU TRIO Upward Bound + AutoNateAI resources for learning demand, tracing supply, connecting people, and building what matters.",
     url: "https://ub.autonateai.com",
     siteName: "GVSU TRIO Upward Bound Resource Library",
     images: [
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Become the plug in your city",
+    title: "Become The Plug",
     description:
-      "Find funded problems. Connect people. Build what matters.",
+      "Learn demand. Trace supply. Connect people. Build what matters.",
     images: ["/og-image.png"],
   },
 };

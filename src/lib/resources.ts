@@ -11,6 +11,12 @@ export type ProgramDay = {
   label: string;
   date: string;
   title: string;
+  video?: {
+    title: string;
+    youtubeId: string;
+    url: string;
+    detail: string;
+  };
   ogImage: string;
   ogTitle: string;
   ogDescription: string;
@@ -23,6 +29,13 @@ export const days: ProgramDay[] = [
     label: "Day 1",
     date: "June 16",
     title: "Opportunity Hunting",
+    video: {
+      title: "Day 1 Class Video",
+      youtubeId: "oewoDbElntg",
+      url: "https://youtu.be/oewoDbElntg",
+      detail:
+        "Replay the Day 1 setup on demand, budgets, departments, programs, and how opportunity hunters read the city.",
+    },
     ogImage: "/og/day-01.png",
     ogTitle: "Day 1: Opportunity Hunting",
     ogDescription:
@@ -57,6 +70,13 @@ export const days: ProgramDay[] = [
     label: "Day 2",
     date: "June 17",
     title: "Follow The Money",
+    video: {
+      title: "Day 2 Class Video",
+      youtubeId: "WUGM1x-NC2k",
+      url: "https://youtu.be/WUGM1x-NC2k",
+      detail:
+        "Watch the Day 2 walkthrough on tracing money from federal priorities into Michigan, local departments, vendors, and opportunity gaps.",
+    },
     ogImage: "/og/day-02.png",
     ogTitle: "Day 2: Follow The Money",
     ogDescription:
