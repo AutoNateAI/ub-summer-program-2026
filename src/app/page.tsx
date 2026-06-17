@@ -51,8 +51,34 @@ const days: ProgramDay[] = [
       },
     ],
   },
-  ...Array.from({ length: 8 }, (_, index) => {
-    const day = index + 2;
+  {
+    label: "Day 2",
+    date: "June 17",
+    title: "Follow The Money",
+    resources: [
+      {
+        title: "Follow The Money",
+        type: "Pre-Class Notes",
+        status: "Available",
+        href: "/resources/day-02/follow-the-money-preclass-notes.pdf",
+        detail: "Prep notes on how public demand, departments, federal funding, local programs, vendors, LinkedIn, and partnership networks connect.",
+      },
+      {
+        title: "Class Notes",
+        type: "Class Notes",
+        status: "Coming Soon",
+        detail: "Download will appear after the notes are finalized.",
+      },
+      {
+        title: "Assignment",
+        type: "Assignment",
+        status: "Coming Soon",
+        detail: "Download will appear after the assignment is finalized.",
+      },
+    ],
+  },
+  ...Array.from({ length: 7 }, (_, index) => {
+    const day = index + 3;
 
     return {
       label: `Day ${day}`,
@@ -215,7 +241,7 @@ export default function HomePage() {
               Available Now
             </p>
             <h2 className="mt-1 text-2xl font-black text-[#14384c]">
-              Day 1 Downloads
+              Latest Downloads
             </h2>
           </div>
           <p className="text-sm font-semibold text-[#65727b]">
@@ -224,8 +250,8 @@ export default function HomePage() {
         </div>
 
         <div className="mt-5 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {days[0].resources.map((resource) => (
-            <ResourceCard key={`${days[0].label}-${resource.type}`} resource={resource} />
+          {availableResources.map((resource) => (
+            <ResourceCard key={`${resource.day}-${resource.type}`} resource={resource} />
           ))}
         </div>
       </section>
