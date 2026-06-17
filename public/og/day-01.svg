@@ -1,0 +1,75 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630">
+      <stop stop-color="#071821"/>
+      <stop offset="0.46" stop-color="#123d50"/>
+      <stop offset="1" stop-color="#08141b"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#ffd56a"/>
+      <stop offset="1" stop-color="#d99a2b"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#7ff8ef"/>
+      <stop offset="1" stop-color="#277c86"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(875 292) rotate(90) scale(250 350)">
+      <stop stop-color="#48f5dd" stop-opacity="0.42"/>
+      <stop offset="0.52" stop-color="#2ca6a7" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#0b2231" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" stroke="#8de9e2" stroke-opacity="0.08"/>
+    </pattern>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect x="568" y="22" width="596" height="586" rx="42" fill="url(#glow)"/>
+
+  <g opacity="0.95">
+    <path d="M652 455V250H704V455H652Z" fill="#102b39" stroke="#73d9d5" stroke-opacity="0.32"/>
+    <path d="M721 455V178H778V455H721Z" fill="#123344" stroke="#73d9d5" stroke-opacity="0.32"/>
+    <path d="M795 455V224H855V455H795Z" fill="#0f2b3a" stroke="#73d9d5" stroke-opacity="0.32"/>
+    <path d="M872 455V136H946V455H872Z" fill="#133d50" stroke="#73d9d5" stroke-opacity="0.32"/>
+    <path d="M965 455V206H1022V455H965Z" fill="#0e2a38" stroke="#73d9d5" stroke-opacity="0.32"/>
+    <path d="M1038 455V262H1108V455H1038Z" fill="#123647" stroke="#73d9d5" stroke-opacity="0.32"/>
+    <path d="M615 455H1135" stroke="#7ff8ef" stroke-opacity="0.35" stroke-width="2"/>
+  </g>
+
+  <path d="M645 394C718 337 790 315 875 326C957 336 1027 296 1097 216" stroke="#62f7db" stroke-width="5" stroke-linecap="round"/>
+  <path d="M665 329C728 286 792 265 858 273C937 284 1010 247 1064 181" stroke="#62f7db" stroke-opacity="0.5" stroke-width="3" stroke-linecap="round"/>
+  
+  <circle cx="645" cy="394" r="14" fill="url(#gold)"/>
+  <circle cx="875" cy="326" r="14" fill="url(#gold)"/>
+  <circle cx="1097" cy="216" r="14" fill="url(#gold)"/>
+  <circle cx="858" cy="273" r="10" fill="url(#cyan)"/>
+
+  <g transform="translate(724 340)">
+    <ellipse cx="100" cy="154" rx="156" ry="24" fill="#06141c" opacity="0.46"/>
+    <circle cx="95" cy="28" r="31" fill="#c98745"/>
+    <path d="M65 21C70 -1 89 -13 111 -5C130 2 136 17 129 35C117 23 101 16 65 21Z" fill="#10212d"/>
+    <path d="M47 190L67 95H123L146 190H112L103 132H84L75 190H47Z" fill="#1f5365"/>
+    <path d="M151 99L211 67" stroke="#7ff8ef" stroke-width="14" stroke-linecap="round"/>
+    <rect x="204" y="43" width="56" height="42" rx="8" transform="rotate(10 204 43)" fill="#0a1821" stroke="#7ff8ef" stroke-width="3"/>
+    <path d="M198 190L177 104H220L244 190H198Z" fill="#1a4759"/>
+    <circle cx="262" cy="72" r="19" fill="#7f4d34"/>
+    <path d="M241 190L252 105H287L310 190H277L269 137H260L255 190H241Z" fill="#194154"/>
+    <path d="M47 102L3 71" stroke="#62f7db" stroke-width="13" stroke-linecap="round"/>
+    <circle cx="-12" cy="61" r="20" fill="#6f432f"/>
+    <path d="M-46 190L-31 104H10L32 190H0L-8 137H-17L-23 190H-46Z" fill="#163d50"/>
+  </g>
+
+  <rect x="58" y="58" width="530" height="430" rx="28" fill="#061722" fill-opacity="0.68" stroke="#7ff8ef" stroke-opacity="0.22"/>
+  <text x="92" y="112" fill="#ffd56a" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="800" letter-spacing="1.2">GVSU TRIO UPWARD BOUND</text>
+  <text x="92" y="146" fill="#cfe8ef" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">AutoNateAI Resource Library</text>
+  <text x="92" y="208" fill="#7ff8ef" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="900">DAY 1</text>
+  <text x="92" y="277" fill="white" font-family="Inter, Arial, sans-serif" font-size="62" font-weight="900" letter-spacing="-1.2">Opportunity Hunting</text>
+  <text x="92" y="350" fill="white" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="900" letter-spacing="-0.8">Find the demand.</text>
+  <rect x="92" y="378" width="78" height="7" rx="3.5" fill="url(#gold)"/>
+  <text x="92" y="432" fill="#dbe8ed" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="700">Needs → budgets → departments → programs → partners</text>
+  <rect x="58" y="536" width="212" height="40" rx="20" fill="#7ff8ef"/>
+  <text x="86" y="562" fill="#071821" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="900" letter-spacing="0.7">UB.AUTONATEAI.COM</text>
+</svg>
