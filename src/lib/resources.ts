@@ -91,10 +91,12 @@ export const days: ProgramDay[] = [
           "Prep notes on how public demand, departments, federal funding, local programs, vendors, LinkedIn, and partnership networks connect.",
       },
       {
-        title: "Class Notes",
+        title: "Follow The Money Review",
         type: "Class Notes",
-        status: "Coming Soon",
-        detail: "Download will appear after the notes are finalized.",
+        status: "Available",
+        href: "/resources/day-02/follow-the-money-postclass-notes.pdf",
+        detail:
+          "Post-class review covering the FigJam budget flow, city council decisions, department tables, team roles, Google Docs, Stitch prototypes, and tomorrow's development path.",
       },
       {
         title: "Assignment",
