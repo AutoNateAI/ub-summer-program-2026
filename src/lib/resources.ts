@@ -99,10 +99,12 @@ export const days: ProgramDay[] = [
           "Post-class review covering the FigJam budget flow, city council decisions, department tables, team roles, Google Docs, Stitch prototypes, and tomorrow's development path.",
       },
       {
-        title: "Assignment",
+        title: "Day 2 Homework",
         type: "Assignment",
-        status: "Coming Soon",
-        detail: "Download will appear after the assignment is finalized.",
+        status: "Available",
+        href: "/resources/day-02/follow-the-money-homework.pdf",
+        detail:
+          "Review today's class notes and prepare for tomorrow's Chamber directory research, program design, and Lovable.dev software build workflow.",
       },
     ],
   },
