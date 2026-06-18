@@ -20,8 +20,17 @@ const days = [
     detail: "Federal → Michigan → local departments → vendors",
     accent: "#ffd56a",
   },
-  ...Array.from({ length: 7 }, (_, index) => ({
-    n: index + 3,
+  {
+    n: 3,
+    title: "Chamber Partners To Software",
+    titleLines: ["Chamber Partners", "To Software"],
+    hook: "Broker the program.",
+    detail: "Chamber supply → partner ROI → Lovable dashboard",
+    detailLines: ["Chamber supply → partner ROI", "Lovable dashboard"],
+    accent: "#7ff8ef",
+  },
+  ...Array.from({ length: 6 }, (_, index) => ({
+    n: index + 4,
     title: "Resources Coming Soon",
     hook: "Stay tapped in.",
     detail: "Notes, assignments, and pre-class materials will post here.",
@@ -35,6 +44,23 @@ function esc(value) {
 
 function svg(day) {
   const isDay2 = day.n === 2;
+  const titleLines = day.titleLines ?? [day.title];
+  const titleMarkup = titleLines
+    .map(
+      (line, index) =>
+        `<text x="92" y="${277 + index * 66}" fill="white" font-family="Inter, Arial, sans-serif" font-size="62" font-weight="900" letter-spacing="-1.2">${esc(line)}</text>`,
+    )
+    .join("\n  ");
+  const hookY = titleLines.length > 1 ? 404 : 350;
+  const ruleY = hookY + 28;
+  const detailY = hookY + 82;
+  const detailLines = day.detailLines ?? [day.detail];
+  const detailMarkup = detailLines
+    .map(
+      (line, index) =>
+        `<text x="92" y="${detailY + index * 32}" fill="#dbe8ed" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="700">${esc(line)}</text>`,
+    )
+    .join("\n  ");
 
   return `<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -104,10 +130,10 @@ function svg(day) {
   <text x="92" y="112" fill="#ffd56a" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="800" letter-spacing="1.2">GVSU TRIO UPWARD BOUND</text>
   <text x="92" y="146" fill="#cfe8ef" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">AutoNateAI Resource Library</text>
   <text x="92" y="208" fill="${day.accent}" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="900">DAY ${day.n}</text>
-  <text x="92" y="277" fill="white" font-family="Inter, Arial, sans-serif" font-size="62" font-weight="900" letter-spacing="-1.2">${esc(day.title)}</text>
-  <text x="92" y="350" fill="white" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="900" letter-spacing="-0.8">${esc(day.hook)}</text>
-  <rect x="92" y="378" width="78" height="7" rx="3.5" fill="url(#gold)"/>
-  <text x="92" y="432" fill="#dbe8ed" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="700">${esc(day.detail)}</text>
+  ${titleMarkup}
+  <text x="92" y="${hookY}" fill="white" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="900" letter-spacing="-0.8">${esc(day.hook)}</text>
+  <rect x="92" y="${ruleY}" width="78" height="7" rx="3.5" fill="url(#gold)"/>
+  ${detailMarkup}
   <rect x="58" y="536" width="212" height="40" rx="20" fill="${day.accent}"/>
   <text x="86" y="562" fill="#071821" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="900" letter-spacing="0.7">UB.AUTONATEAI.COM</text>
 </svg>`;

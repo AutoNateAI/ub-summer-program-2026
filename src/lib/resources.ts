@@ -108,8 +108,40 @@ export const days: ProgramDay[] = [
       },
     ],
   },
-  ...Array.from({ length: 7 }, (_, index) => {
-    const day = index + 3;
+  {
+    slug: "day-3",
+    label: "Day 3",
+    date: "June 18",
+    title: "Chamber Partners To Software",
+    ogImage: "/og/day-03.png",
+    ogTitle: "Day 3: Chamber Partners To Software",
+    ogDescription:
+      "Add Chamber supply to the budget research, broker win-win programs, and use Lovable.dev to build a practical software tool.",
+    resources: [
+      {
+        title: "Chamber Partners To Software",
+        type: "Pre-Class Notes",
+        status: "Available",
+        href: "/resources/day-03/chamber-to-software-preclass-notes.pdf",
+        detail:
+          "Prep notes for adding Chamber directory suppliers, brokering partner ROI, architecting a program, and prompting ChatGPT, Stitch, and Lovable.dev.",
+      },
+      {
+        title: "Class Notes",
+        type: "Class Notes",
+        status: "Coming Soon",
+        detail: "Download will appear after the notes are finalized.",
+      },
+      {
+        title: "Assignment",
+        type: "Assignment",
+        status: "Coming Soon",
+        detail: "Download will appear after the assignment is finalized.",
+      },
+    ],
+  },
+  ...Array.from({ length: 6 }, (_, index) => {
+    const day = index + 4;
     const slug = `day-${day}`;
 
     return {
