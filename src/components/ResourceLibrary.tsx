@@ -36,6 +36,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
   const style = typeStyles[resource.type];
   const Icon = style.icon;
   const isAvailable = resource.status === "Available" && resource.href;
+  const isPdf = resource.href?.endsWith(".pdf");
 
   return (
     <article className="flex min-h-[210px] flex-col justify-between rounded-lg border border-[#d4dbe0] bg-white p-5 shadow-sm">
@@ -66,11 +67,13 @@ function ResourceCard({ resource }: { resource: Resource }) {
       {isAvailable ? (
         <a
           href={resource.href}
-          download
+          download={isPdf || undefined}
+          target={isPdf ? undefined : "_blank"}
+          rel={isPdf ? undefined : "noreferrer"}
           className="mt-5 inline-flex h-11 items-center justify-center gap-2 rounded-md bg-[#14384c] px-4 text-sm font-black text-white transition hover:bg-[#1f516b]"
         >
-          <Download className="h-4 w-4" />
-          Download PDF
+          {isPdf ? <Download className="h-4 w-4" /> : <LinkIcon className="h-4 w-4" />}
+          {isPdf ? "Download PDF" : "Open Resource"}
         </a>
       ) : (
         <div className="mt-5 flex h-11 items-center rounded-md border border-dashed border-[#c5ced5] px-4 text-sm font-bold text-[#65727b]">
@@ -269,7 +272,7 @@ export function ResourceLibrary({ focusedDaySlug }: { focusedDaySlug?: string })
             </h2>
           </div>
           <p className="text-sm font-semibold text-[#65727b]">
-            {availableResources.length} PDF downloads posted
+            {availableResources.length} resources posted
           </p>
         </div>
 

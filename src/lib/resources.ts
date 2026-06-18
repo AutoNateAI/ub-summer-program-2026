@@ -134,10 +134,12 @@ export const days: ProgramDay[] = [
           "Prep notes for adding Chamber directory suppliers, brokering partner ROI, architecting a program, and prompting ChatGPT, Stitch, and Lovable.dev.",
       },
       {
-        title: "Class Notes",
+        title: "Day 3 FigJam Board",
         type: "Class Notes",
-        status: "Coming Soon",
-        detail: "Download will appear after the notes are finalized.",
+        status: "Available",
+        href: "https://www.figma.com/board/2pCjBRB31jurSQB37y235q/Untitled?node-id=0-1&p=f&t=qkMPow9gzM7NABQ2-0",
+        detail:
+          "Live class board showing the budget-to-department flow, city council decision path, department directors, staff, programs, projects, and opportunity mapping.",
       },
       {
         title: "Assignment",
