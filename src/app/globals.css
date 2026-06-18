@@ -25,3 +25,51 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes quiz-panel-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes quiz-slide-forward {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes quiz-slide-back {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.quiz-panel-enter {
+  animation: quiz-panel-enter 260ms ease-out both;
+}
+
+.quiz-slide-forward {
+  animation: quiz-slide-forward 260ms ease-out both;
+}
+
+.quiz-slide-back {
+  animation: quiz-slide-back 260ms ease-out both;
+}
