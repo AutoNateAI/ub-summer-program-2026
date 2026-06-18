@@ -113,6 +113,13 @@ export const days: ProgramDay[] = [
     label: "Day 3",
     date: "June 18",
     title: "Chamber Partners To Software",
+    video: {
+      title: "Day 3 Class Video",
+      youtubeId: "elI7LgEOfLU",
+      url: "https://youtu.be/elI7LgEOfLU",
+      detail:
+        "Replay the Day 3 workflow on adding Chamber supply to the budget research, brokering win-win partner programs, and using Lovable.dev to build software that makes the program real.",
+    },
     ogImage: "/og/day-03.png",
     ogTitle: "Day 3: Chamber Partners To Software",
     ogDescription:
