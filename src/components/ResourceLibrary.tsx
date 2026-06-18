@@ -12,6 +12,7 @@ import {
   Users,
 } from "lucide-react";
 import { availableResources, days, type ProgramDay, type Resource } from "@/lib/resources";
+import { WeekendQuiz } from "@/components/WeekendQuiz";
 
 const typeStyles = {
   "Pre-Class Notes": {
@@ -161,6 +162,7 @@ function DaySection({
         </div>
         <VideoCard day={day} />
       </div>
+      {day.slug === "day-3" ? <WeekendQuiz /> : null}
     </section>
   );
 }

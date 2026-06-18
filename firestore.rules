@@ -18,6 +18,30 @@ service cloud.firestore {
       return signedIn() && request.resource.data.ownerUid == request.auth.uid;
     }
 
+    function isAdmin() {
+      return signedIn() && request.auth.token.email == "autonate.ai@gmail.com";
+    }
+
+    function validWeekendQuizResponse() {
+      return request.resource.data.quizId == "weekend-checkpoint-days-1-3"
+        && request.resource.data.name is string
+        && request.resource.data.nameKey is string
+        && request.resource.data.email is string
+        && request.resource.data.answers is map
+        && request.resource.data.answeredCount is int
+        && request.resource.data.score is int
+        && request.resource.data.totalPoints == 30
+        && request.resource.data.submitted is bool
+        && request.resource.data.dueLabel is string;
+    }
+
+    match /weekendQuizResponses/{responseId} {
+      allow get: if true;
+      allow list: if isAdmin();
+      allow create, update: if validWeekendQuizResponse();
+      allow delete: if isAdmin();
+    }
+
     match /opportunityReports/{reportId} {
       allow create: if ownsIncoming();
       allow read, update, delete: if ownsExisting();
