@@ -29,8 +29,17 @@ const days = [
     detailLines: ["Chamber supply → partner ROI", "Lovable dashboard"],
     accent: "#7ff8ef",
   },
-  ...Array.from({ length: 6 }, (_, index) => ({
-    n: index + 4,
+  {
+    n: 4,
+    title: "Program Blueprint To App Build",
+    titleLines: ["Program Blueprint", "To App Build"],
+    hook: "Build the system.",
+    detail: "3-day program → digital activities → Base44 app",
+    detailLines: ["3-day program → digital activities", "Base44 app"],
+    accent: "#ffd56a",
+  },
+  ...Array.from({ length: 5 }, (_, index) => ({
+    n: index + 5,
     title: "Resources Coming Soon",
     hook: "Stay tapped in.",
     detail: "Notes, assignments, and pre-class materials will post here.",

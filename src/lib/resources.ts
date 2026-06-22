@@ -149,8 +149,40 @@ export const days: ProgramDay[] = [
       },
     ],
   },
-  ...Array.from({ length: 6 }, (_, index) => {
-    const day = index + 4;
+  {
+    slug: "day-4",
+    label: "Day 4",
+    date: "June 22",
+    title: "Program Blueprint To App Build",
+    ogImage: "/og/day-04.png",
+    ogTitle: "Day 4: Program Blueprint To App Build",
+    ogDescription:
+      "Expand partner concepts into a 3-day transformation program, design digital activities, create a Stitch portal, and build a Base44 app draft.",
+    resources: [
+      {
+        title: "Program Blueprint To App Build",
+        type: "Pre-Class Notes",
+        status: "Available",
+        href: "/resources/day-04/program-blueprint-to-app-build-preclass-notes.pdf",
+        detail:
+          "Prep notes and prompts for expanding a win-win-win program, designing digital activities, moving into Stitch, and building with Base44.",
+      },
+      {
+        title: "Class Notes",
+        type: "Class Notes",
+        status: "Coming Soon",
+        detail: "Download will appear after the notes are finalized.",
+      },
+      {
+        title: "Assignment",
+        type: "Assignment",
+        status: "Coming Soon",
+        detail: "Download will appear after the assignment is finalized.",
+      },
+    ],
+  },
+  ...Array.from({ length: 5 }, (_, index) => {
+    const day = index + 5;
     const slug = `day-${day}`;
 
     return {
