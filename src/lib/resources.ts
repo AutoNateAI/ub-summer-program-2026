@@ -181,8 +181,40 @@ export const days: ProgramDay[] = [
       },
     ],
   },
-  ...Array.from({ length: 5 }, (_, index) => {
-    const day = index + 5;
+  {
+    slug: "day-5",
+    label: "Day 5",
+    date: "June 23",
+    title: "Base44 Build And Iterate",
+    ogImage: "/og/day-05.png",
+    ogTitle: "Day 5: Base44 Build And Iterate",
+    ogDescription:
+      "Turn the Stitch design into a Base44 app with authentication, test the system, and refine it around the audience transformation.",
+    resources: [
+      {
+        title: "Pre-Class Notes",
+        type: "Pre-Class Notes",
+        status: "Coming Soon",
+        detail: "Posted before class when a prep handout is available.",
+      },
+      {
+        title: "Base44 Build And Iterate",
+        type: "Class Notes",
+        status: "Available",
+        href: "/resources/day-05/base44-build-and-iterate-class-notes.pdf",
+        detail:
+          "Class notes and prompts for exporting a Stitch design, building a Base44 app with auth, testing user flows, and refining the program through iteration.",
+      },
+      {
+        title: "Assignment",
+        type: "Assignment",
+        status: "Coming Soon",
+        detail: "Download will appear after the assignment is finalized.",
+      },
+    ],
+  },
+  ...Array.from({ length: 4 }, (_, index) => {
+    const day = index + 6;
     const slug = `day-${day}`;
 
     return {

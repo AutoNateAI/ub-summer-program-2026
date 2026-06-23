@@ -38,8 +38,17 @@ const days = [
     detailLines: ["3-day program → digital activities", "Base44 app"],
     accent: "#ffd56a",
   },
-  ...Array.from({ length: 5 }, (_, index) => ({
-    n: index + 5,
+  {
+    n: 5,
+    title: "Base44 Build And Iterate",
+    titleLines: ["Base44 Build", "And Iterate"],
+    hook: "Ship the system.",
+    detail: "Stitch export → auth app → test and refine",
+    detailLines: ["Stitch export → auth app", "Test and refine"],
+    accent: "#7ff8ef",
+  },
+  ...Array.from({ length: 4 }, (_, index) => ({
+    n: index + 6,
     title: "Resources Coming Soon",
     hook: "Stay tapped in.",
     detail: "Notes, assignments, and pre-class materials will post here.",
