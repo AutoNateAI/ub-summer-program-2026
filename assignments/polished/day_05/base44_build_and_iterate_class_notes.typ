@@ -72,6 +72,28 @@ Stitch gave you the design direction.
 
 Base44 turns that direction into a working system.
 
+= Prompt Cheat Codes
+
+Yesterday, your team copied a sequence of prompts from ChatGPT into Google Stitch and got to a real design faster than most people expect.
+
+Today is similar.
+
+The prompt is not just a question.
+
+It is a cheat code for getting AI to move quickly.
+
+#callout("Why prompts matter")[
+  A good contextual prompt gives the AI the setup, the goal, the audience, the constraints, and the expected output. When that context is strong, AI can help you move faster than someone using weak prompts, and much faster than someone not using AI at all.
+]
+
+We will study prompting more deeply tomorrow and during the refinement periods.
+
+For today, remember the simple rule:
+
+#quote-card[Better context creates better output.]
+
+Then use the prompts to build the web app, test it, refine it, and get it ready to share with other people.
+
 = Step 1: Export From Stitch
 
 In Google Stitch, open the design your team created.
@@ -124,7 +146,19 @@ You need to tell Base44:
 
 Use this as the first big prompt in Base44.
 
-#prompt("Base44 App Builder Prompt")[
+#block(
+  width: 100%,
+  breakable: true,
+  fill: rgb("#f2f0eb"),
+  stroke: 0.7pt + rgb("#d7d0c3"),
+  radius: 6pt,
+  inset: 10pt,
+  above: 8pt,
+  below: 11pt,
+)[
+#text(weight: "bold", fill: navy)[Base44 App Builder Prompt]
+#v(4pt)
+#text(size: 9.5pt)[
 "Build a full web app for our community program.
 
 Context:
@@ -175,6 +209,7 @@ Stitch design export:
 [paste the full Stitch export here]
 
 Before building, briefly summarize the app structure you are going to create. Then build the first working version."
+]
 ]
 
 = Authentication Requirements
