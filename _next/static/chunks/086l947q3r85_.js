@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,4181,t=>{"use strict";var e=t.i(71645);t.s(["ScrollToDay",0,function({slug:t}){return(0,e.useEffect)(()=>{let e=document.getElementById(t);e&&window.requestAnimationFrame(()=>{e.scrollIntoView({block:"start",behavior:"smooth"})})},[t]),null}])}]);
