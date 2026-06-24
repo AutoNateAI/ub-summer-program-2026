@@ -213,8 +213,40 @@ export const days: ProgramDay[] = [
       },
     ],
   },
-  ...Array.from({ length: 4 }, (_, index) => {
-    const day = index + 6;
+  {
+    slug: "day-6",
+    label: "Day 6",
+    date: "June 24",
+    title: "Deploy, Prompt, And Refine",
+    ogImage: "/og/day-06.png",
+    ogTitle: "Day 6: Deploy, Prompt, And Refine",
+    ogDescription:
+      "Deploy Base44 frontend exports to GitHub Pages with CI/CD, then refine the live app through prompt engineering, research, activities, and contextual engineering.",
+    resources: [
+      {
+        title: "Deploy, Prompt, And Refine",
+        type: "Pre-Class Notes",
+        status: "Available",
+        href: "/resources/day-06/github-pages-and-context-engineering-preclass-notes.pdf",
+        detail:
+          "Prep notes for exporting Base44 code, deploying to GitHub Pages with GitHub Actions, preserving backend connections, and refining the app through contextual engineering.",
+      },
+      {
+        title: "Class Notes",
+        type: "Class Notes",
+        status: "Coming Soon",
+        detail: "Download will appear after the notes are finalized.",
+      },
+      {
+        title: "Assignment",
+        type: "Assignment",
+        status: "Coming Soon",
+        detail: "Download will appear after the assignment is finalized.",
+      },
+    ],
+  },
+  ...Array.from({ length: 3 }, (_, index) => {
+    const day = index + 7;
     const slug = `day-${day}`;
 
     return {
