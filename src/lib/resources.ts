@@ -217,19 +217,19 @@ export const days: ProgramDay[] = [
     slug: "day-6",
     label: "Day 6",
     date: "June 24",
-    title: "Deploy, Prompt, And Refine",
+    title: "Publish, Prompt, And Refine",
     ogImage: "/og/day-06.png",
-    ogTitle: "Day 6: Deploy, Prompt, And Refine",
+    ogTitle: "Day 6: Publish, Prompt, And Refine",
     ogDescription:
-      "Deploy Base44 frontend exports to GitHub Pages with CI/CD, then refine the live app through prompt engineering, research, activities, and contextual engineering.",
+      "Publish Base44 apps with the built-in Publish flow, then refine the live app through prompt engineering, screenshots, activities, and contextual engineering.",
     resources: [
       {
-        title: "Deploy, Prompt, And Refine",
+        title: "Publish, Prompt, And Refine",
         type: "Pre-Class Notes",
         status: "Available",
-        href: "/resources/day-06/day-6-deploy-prompt-refine-preclass-v2.pdf",
+        href: "/resources/day-06/day-6-publish-prompt-refine-preclass-v3.pdf",
         detail:
-          "Prep notes for exporting Base44 code, deploying to GitHub Pages with GitHub Actions, preserving backend connections, and refining the app through contextual engineering.",
+          "Prep notes for publishing Base44 apps, choosing a Base44 subdomain, using screenshots and ChatGPT to refine the flow, and turning the app into a funding-ready opportunity proposal.",
       },
       {
         title: "Class Notes",

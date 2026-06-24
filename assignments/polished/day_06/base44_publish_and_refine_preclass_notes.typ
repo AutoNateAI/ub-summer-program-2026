@@ -1,12 +1,12 @@
 #import "theme.typ": *
 
 #setup(
-  title: "Deploy, Prompt, And Refine",
-  subtitle: "Ship the Base44 app to GitHub Pages, then deepen the program through contextual engineering",
+  title: "Publish, Prompt, And Refine",
+  subtitle: "Publish the Base44 app, then deepen the program through contextual engineering",
   kind: "Pre-Class Notes",
 )[
 
-#title-card("Deploy, Prompt, And Refine", subtitle: "Ship the Base44 app to GitHub Pages, then deepen the program through contextual engineering", label: "Day 6 · Pre-Class Notes · Wednesday, June 24")
+#title-card("Publish, Prompt, And Refine", subtitle: "Publish the Base44 app, then deepen the program through contextual engineering", label: "Day 6 · Pre-Class Notes · Wednesday, June 24")
 
 = Where We Are Today
 
@@ -18,28 +18,28 @@ Some parts moved fast. Some parts may have felt semi-blind in the moment. That i
 
 Today we go deeper.
 
-#quote-card[Today we name the full story, ship the app, and refine the program behind the software.]
+#quote-card[Today we name the full story, publish the app, and refine the program behind the software.]
 
-The first part of class is technical. We will export the Base44 code, upload it to GitHub, and deploy the frontend with GitHub Pages.
+The first part of class is technical. We will use Base44's Publish button to put the app live on the internet.
 
 The second part is product work. We will review the program each team created, improve the activities, strengthen the flow, connect the app more tightly to the speakers and concepts being taught, and use research to make the experience more specific.
 
 #compact-flow("Today's Flow", (
-  ("Export Code", "Upload To GitHub", "Deploy With GitHub Pages"),
-  ("Push To Main", "Auto-Deploy", "Share Live Site"),
+  ("Preview App", "Click Publish", "Get Live Link"),
+  ("Change Subdomain", "Test Website", "Save Link"),
   ("Review Program", "Research Deeper", "Refine App"),
 ))
 
 = The Tutorial Narrative
 
-Today's tutorial is not only about GitHub.
+Today's tutorial is not only about publishing.
 
 The tutorial is the full story of how a local opportunity becomes a live software offer:
 
 #compact-flow("From Opportunity To Software Offer", (
   ("Public Demand", "Community Supply", "Program Concept"),
   ("Program Mechanics", "Digital Tool", "Working Prototype"),
-  ("GitHub Repository", "Live Website", "Refined Offer"),
+  ("Base44 Publish", "Live Website", "Refined Offer"),
 ))
 
 Here is the narrative:
@@ -50,7 +50,7 @@ Here is the narrative:
 4. Chamber directories show businesses, nonprofits, and service providers that can help deliver a solution.
 5. The team becomes the broker by designing a win-win-win program around the department, partners, and participants.
 6. The software tool makes the program easier to run, easier to track, and easier to pitch.
-7. Deployment turns the prototype into a live website that stakeholders can actually open.
+7. Publishing turns the prototype into a live website that stakeholders can actually open.
 8. Contextual engineering helps the team refine the app until it feels valid, specific, and attractive.
 
 #callout("What students have really been building")[
@@ -66,7 +66,7 @@ That is normal. The class was moving through a full opportunity-to-software pipe
 #compact-flow("The Full Opportunity Pipeline", (
   ("City Budget", "Department Demand", "Program Pain Points"),
   ("Chamber Supply", "Win-Win-Win Program", "Software Offer"),
-  ("Stitch Design", "Base44 App", "Live Deployment"),
+  ("Stitch Design", "Base44 App", "Live Publish"),
 ))
 
 The prompts were not random. They were guiding teams through the way real consultants, product strategists, and software builders find demand, map stakeholders, create a program offer, and then build a tool that makes the offer more valuable.
@@ -98,221 +98,151 @@ Your app should make both groups think:
   This team understands the problem, knows the stakeholders, has a practical program, can track outcomes, and built a tool that would make the program easier to run.
 ]
 
-= Why We Are Deploying
+= Why We Are Publishing
 
 Base44 helped teams build quickly. Now the app needs a real public home.
 
-When we deploy to GitHub Pages, each team gets a live website they can open, test, share, and keep improving. The goal is not just to have code sitting in a ZIP file. The goal is to create a workflow where the app can keep changing.
+The better path for today is to use Base44's built-in Publish button. Base44 can host the application for us, which means students do not need extra hosting or deployment setup.
 
-#callout("The deployment goal")[
-  When Base44 pushes new code to the main branch, GitHub should automatically rebuild the frontend and publish the newest version of the app.
+#callout("The publishing goal")[
+  Each team should leave with a live Base44 website link they can open, test, share, screenshot, and use inside the final opportunity proposal report.
 ]
 
-That means students get a real software delivery loop:
+That means students get a practical product loop:
 
 - Build in Base44
-- Export or push code
-- Store code in GitHub
-- Deploy through GitHub Actions
-- Test the live website
-- Refine the app
-- Push again
-- See the website update
+- Preview the app
+- Publish the app
+- Open the live website
+- Test the user flow
+- Ask ChatGPT what to improve
+- Ask Base44 to update the app
+- Publish again
+- See the website improve
 
-= The Backend Question
-
-Most Base44 apps are not just static pages. They usually point to a backend, database, authentication system, API, or Base44-hosted service.
-
-When we move the frontend to GitHub Pages, we need to make sure the deployed site still knows where that backend is.
-
-#quote-card[The frontend can live on GitHub Pages, but it still needs to talk to the same backend it was using before.]
-
-Before deploying, each team should identify:
-
-#pro-table((1fr, 1.6fr), (
-  [#text(fill: white)[Question]], [#text(fill: white)[What To Check]],
-  [Where is the backend?], [Look for API URLs, environment variables, auth settings, database URLs, or Base44 service configuration.],
-  [Is the app fully static?], [If it only uses frontend code and external services, GitHub Pages may work directly.],
-  [Does it need secrets?], [Secrets should not be placed directly in public frontend code. Use public-safe keys only.],
-  [Does the backend allow this domain?], [Some auth or API tools require adding the GitHub Pages URL as an allowed origin or redirect URL.],
-  [Does routing work on refresh?], [Single-page apps may need special handling so deep links do not 404 on GitHub Pages.],
-))
-
-= GitHub Pages Deployment Tutorial
+= Base44 Publish Tutorial
 
 We will walk through this together in class.
 
-The exact commands may change depending on the Base44 export, but the idea is the same for most frontend apps.
+The screenshots below show the exact publishing flow.
 
-== Step 1: Export Code From Base44
+== Step 1: Preview The App
 
-In Base44, export the project code as a ZIP file.
+Start inside Base44 in Preview mode.
 
-Download the ZIP and unzip it on your computer.
+Click through the app before publishing. Make sure the landing page, participant dashboard, activity pages, partner pages, organizer views, forms, and sample data are good enough to share.
 
-Inside the folder, look for the frontend project structure. Most generated frontends will have files like:
-
-- `package.json`
-- `src/`
-- `public/`
-- `index.html` or a framework entry file
-- `vite.config.js`, `next.config.js`, or another build config
-
-#callout("What package.json tells us")[
-  The `package.json` file usually tells us how to install, run, and build the app. Look for scripts like `dev`, `build`, `preview`, or `start`.
-]
-
-== Step 2: Create A GitHub Repository
-
-Each team will create a GitHub repository for the app.
-
-Use a clear repository name connected to the program, such as:
-
-- `youth-career-launchpad`
-- `healthy-neighborhoods-portal`
-- `small-business-accelerator-app`
-- `arts-access-program`
-
-Keep the repository public if you want to use the standard free GitHub Pages workflow.
-
-== Step 3: Upload The Code
-
-The first upload can happen through the GitHub website or through Git commands.
-
-The important part is that the project files end up on the `main` branch.
+#figure(
+  image("assets/base44-preview-dashboard.png", width: 100%),
+  caption: [Base44 Preview shows the app before it is published. Use this screen to test the dashboard and navigation.]
+)
 
 #checklist((
-  "The repository has the unzipped Base44 project files",
-  "`package.json` is at the correct project root",
-  "The code is pushed to the `main` branch",
-  "The team can see the files on GitHub",
-  "The app still has its backend/API configuration",
-  "No private secrets were pasted into public code",
+  "The app has a clear landing page",
+  "The dashboard loads",
+  "The 3-day activity flow is visible",
+  "Buttons and navigation work",
+  "Forms are present where users need to submit information",
+  "The app has sample data so it feels real",
+  "The partner and organizer value is visible",
+  "The app is ready for someone outside the team to open",
 ))
 
-== Step 4: Add The GitHub Actions Workflow
+== Step 2: Click Publish
 
-GitHub Actions is the CI/CD system.
+When the app is ready, click the `Publish` button in the top-right corner of Base44.
 
-CI/CD means:
+Base44 will package the app and host it on a Base44 web address.
 
-- Continuous Integration: GitHub checks and builds the code when it changes.
-- Continuous Deployment: GitHub publishes the new site after the build passes.
+#figure(
+  image("assets/base44-publish-modal.png", width: 100%),
+  caption: [After clicking Publish, Base44 shows the live app URL. Copy this URL into the team's Google Doc.]
+)
 
-For most Vite-style frontend exports, the workflow will look similar to this:
+== Step 3: Copy The Live URL
 
-#prompt("GitHub Pages Workflow")[
-Create a file named `.github/workflows/pages.yml`.
+After publishing, Base44 will show a message that the app is live online.
 
-Use this structure as the starting point:
+Copy the app URL and save it in the Google Doc.
 
-```yaml
-name: Deploy to GitHub Pages
+The app URL will look similar to:
 
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
+#quote-card[`your-subdomain.base44.app`]
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+This means Base44 is hosting the app. The website lives on Base44's servers, and students can share the link without setting up extra hosting tools.
 
-concurrency:
-  group: pages
-  cancel-in-progress: false
+== Step 4: Change The Subdomain Name
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+The part before `.base44.app` is the subdomain.
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
+For example:
 
-      - name: Install dependencies
-        run: npm ci
+#pro-table((1fr, 1.4fr), (
+  [#text(fill: white)[URL Part]], [#text(fill: white)[Meaning]],
+  [`safe-u-connect.base44.app`], [A Base44-hosted app using the `safe-u-connect` subdomain.],
+  [`career-night-gr.base44.app`], [A Base44-hosted app using a different team/program subdomain.],
+  [`your-program-name.base44.app`], [A placeholder showing that the team can choose a clearer name.],
+))
 
-      - name: Build
-        run: npm run build
+Teams should choose a subdomain that is short, readable, and connected to the program.
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
+Good subdomain names:
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-```
+- `safe-u-connect`
+- `career-night-gr`
+- `youth-career-launch`
+- `public-safety-lab`
+- `well-nest-detroit`
+
+#callout("Custom domain note")[
+  Base44 hosts the app on a `.base44.app` address. If a team wanted the Base44 part removed and wanted a fully custom domain like `safeuconnect.org`, that would usually require a paid/custom domain setup. That is outside the scope of this course. For today, the Base44 subdomain is enough.
 ]
 
-If the build output folder is not `dist`, we will adjust the workflow.
+== Step 5: Open The Live Site
 
-#pro-table((1fr, 1.3fr), (
-  [#text(fill: white)[Framework / Build]], [#text(fill: white)[Common Output Folder]],
-  [Vite], [`dist`],
-  [Create React App], [`build`],
-  [Next static export], [`out`],
-  [Plain HTML/CSS/JS], [Project root or a configured folder],
-))
+Open the published URL in a new tab.
 
-== Step 5: Turn On GitHub Pages
+This is the public version of the application. It is the link students can use for testing, screenshots, proposals, and partner conversations.
 
-In the repository settings:
-
-1. Go to `Settings`
-2. Go to `Pages`
-3. Choose `GitHub Actions` as the source
-4. Save the setting
-5. Push to `main` and watch the Actions tab
-
-When the workflow finishes, GitHub will give the team a live website URL.
+#figure(
+  image("assets/base44-live-site.png", width: 100%),
+  caption: [The live Base44 site is what partners, funders, department staff, and participants can open.]
+)
 
 == Step 6: Test The Live Site
 
-Testing the deployed site matters more than seeing a green checkmark.
+Testing the published site matters more than seeing the publish message.
 
 #checklist((
   "The landing page loads",
+  "The app name and program promise are clear",
   "Images, styles, and icons appear",
   "Navigation works",
-  "Refresh does not break important pages",
-  "Login or sign-up still works if the app has auth",
-  "Forms still submit to the correct backend",
-  "Dashboard data still loads",
+  "Login or sign-up works if the app has auth",
+  "Participant dashboard loads",
+  "Activity pages make sense",
+  "Forms and submissions work",
+  "Partner value is visible",
+  "Organizer or impact views show useful data",
   "The app works on a phone-sized screen",
 ))
 
-= What Happens After Deployment
+= What Happens After Publishing
 
 Once the live site works, the team has a real product loop.
 
-From this point forward, Base44 can make changes, push them to the `main` branch, and GitHub Actions can publish the updated site.
+From this point forward, Base44 can keep improving the app. After each meaningful update, publish again and test the live website.
 
 #quote-card[The live website becomes the testing ground for the program.]
 
 Every team should save:
 
-- GitHub repository link
-- Live GitHub Pages link
-- Base44 app link
-- Current backend/API notes
-- GitHub Actions status
-- Known deployment issues
+- Live Base44 app link
+- Base44 project link
+- Chosen subdomain name
+- Screenshots of the app flow
+- Notes on what works
+- Known issues or confusing screens
 - Next refinement prompts
 
 = Prompt Engineering Gets Deeper Today
@@ -379,7 +309,7 @@ For each weak spot, recommend a specific Base44 prompt to improve the app."
 
 = Refining The Application
 
-After deployment, teams will review the program they created and improve the app around it.
+After publishing, teams will review the program they created and improve the app around it.
 
 The app should not feel like a random set of pages. It should flow with the concepts being taught by the speakers and the transformation the program promises.
 
@@ -431,7 +361,7 @@ Ask:
 
 #compact-flow("Refinement Loop", (
   ("Explain Program", "Screenshot Flow", "Ask For Critique"),
-  ("Upgrade Prompt", "Base44 Update", "Deploy Again"),
+  ("Upgrade Prompt", "Base44 Update", "Publish Again"),
   ("Proposal Report", "Funding Logic", "Final Pitch"),
 ))
 
@@ -555,7 +485,7 @@ The workflow today should be:
 4. Ask ChatGPT for upgrades that improve transformation, funding logic, partner ROI, and app interaction.
 5. Copy the best upgrade prompt into Base44.
 6. Let Base44 update the app.
-7. Test the live site again after deployment.
+7. Test the live site again after publishing.
 8. Save the before/after notes in the Google Doc.
 
 #callout("Why this order matters")[
@@ -566,7 +496,7 @@ The workflow today should be:
 
 The final deliverable is not only the app.
 
-Teams should use their Google Doc, ChatGPT conversation, screenshots, research findings, and deployed app to create a final opportunity proposal report.
+Teams should use their Google Doc, ChatGPT conversation, screenshots, research findings, and published app to create a final opportunity proposal report.
 
 This report should explain why the opportunity is real, why the program is practical, and how the application drives the activities and transformations the program is designed to create.
 
@@ -585,7 +515,7 @@ This report should explain why the opportunity is real, why the program is pract
 ))
 
 #prompt("Opportunity Proposal Report Prompt")[
-"Using our Google Doc, our ChatGPT conversation, our app screenshots, and our deployed app link, help us create a final opportunity proposal report.
+"Using our Google Doc, our ChatGPT conversation, our app screenshots, and our published app link, help us create a final opportunity proposal report.
 
 The audience is a city department, funding group, school leader, Chamber partner, or program manager.
 
@@ -607,7 +537,7 @@ Make the report clear, professional, practical, and appropriate for funding peop
 
 = Refinement Prompt Stack
 
-Use these prompts after the app is deployed and the team has chosen which part of the flow to improve first.
+Use these prompts after the app is published and the team has chosen which part of the flow to improve first.
 
 #prompt("Demand Manager Validity Prompt")[
 "Improve our app so it feels credible to a department lead, city staff member, program manager, or other demand manager.
@@ -720,16 +650,17 @@ Turn the findings into 10 specific improvements for our Base44 app."
 
 = What I Will Be Doing In Class
 
-After the deployment tutorial, I will come around to each group.
+After the publishing tutorial, I will come around to each group.
 
 We will look at your live app, your program concept, your activities, your partner model, and your tracking. The goal is to help each group make the tool more refined for what they are trying to build.
 
 Be ready to show:
 
 #checklist((
-  "Your GitHub repository",
-  "Your deployed GitHub Pages site",
+  "Your live Base44 app link",
+  "Your Base44 subdomain name",
   "Your Base44 project",
+  "Screenshots of the main app flow",
   "Your program blueprint",
   "Your target audience",
   "Your three-day activity flow",
@@ -744,17 +675,17 @@ Be ready to show:
 By the end of class, each team should have:
 
 #checklist((
-  "Base44 code exported or connected to GitHub",
-  "A GitHub repository on the main branch",
-  "A GitHub Actions deployment workflow",
-  "A live GitHub Pages website",
-  "Backend/API configuration checked",
-  "At least one successful push-to-main deployment",
+  "A published Base44 app",
+  "A clear `.base44.app` subdomain",
+  "A live website link saved in the Google Doc",
+  "Screenshots of the app flow",
+  "At least one publish-test-refine cycle completed",
   "A refined program flow",
   "More interactive activities",
   "A clearer tracking or impact plan",
   "Research notes that support the next iteration",
   "A list of the next Base44 prompts to run",
+  "A draft opportunity proposal report",
   "A stronger app that matches the program vision",
 ))
 
@@ -762,10 +693,10 @@ By the end of class, each team should have:
 
 Today connects two worlds.
 
-First, we learn how builders ship software so other people can use it.
+First, we learn how builders publish software so other people can use it.
 
 Then we learn how builders refine software so it becomes more useful, more specific, and more connected to a real human outcome.
 
-#quote-card[Deployment makes the app real. Contextual engineering makes the app worth using.]
+#quote-card[Publishing makes the app real. Contextual engineering makes the app worth using.]
 
 ]
