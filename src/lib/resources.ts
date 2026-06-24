@@ -238,15 +238,49 @@ export const days: ProgramDay[] = [
         detail: "Download will appear after the notes are finalized.",
       },
       {
-        title: "Assignment",
+        title: "Final Exam Review Homework",
         type: "Assignment",
-        status: "Coming Soon",
-        detail: "Download will appear after the assignment is finalized.",
+        status: "Available",
+        href: "/resources/day-06/final-exam-review-homework.pdf",
+        detail:
+          "Homework guide for reviewing the full city-budget-to-published-app workflow before tomorrow's final exam.",
       },
     ],
   },
-  ...Array.from({ length: 3 }, (_, index) => {
-    const day = index + 7;
+  {
+    slug: "day-7",
+    label: "Day 7",
+    date: "June 25",
+    title: "Final Exam And Opportunity Proposal Review",
+    ogImage: "/og/day-07.png",
+    ogTitle: "Day 7: Final Exam And Opportunity Proposal Review",
+    ogDescription:
+      "Review the full local opportunity-to-app workflow, then complete the locked final exam on budgets, departments, partners, prompts, apps, publishing, and proposal logic.",
+    resources: [
+      {
+        title: "Pre-Class Notes",
+        type: "Pre-Class Notes",
+        status: "Coming Soon",
+        detail: "Check this page before class.",
+      },
+      {
+        title: "Final Exam",
+        type: "Assignment",
+        status: "Available",
+        href: "#final-exam",
+        detail:
+          "The 45-question final exam unlocks Thursday, June 25, 2026 at 9:15 AM ET on this page.",
+      },
+      {
+        title: "Class Notes",
+        type: "Class Notes",
+        status: "Coming Soon",
+        detail: "Download will appear after the notes are finalized.",
+      },
+    ],
+  },
+  ...Array.from({ length: 2 }, (_, index) => {
+    const day = index + 8;
     const slug = `day-${day}`;
 
     return {

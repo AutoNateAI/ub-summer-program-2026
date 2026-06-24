@@ -35,10 +35,30 @@ service cloud.firestore {
         && request.resource.data.dueLabel is string;
     }
 
+    function validFinalExamResponse() {
+      return request.resource.data.assessmentId == "final-opportunity-to-app-exam"
+        && request.resource.data.name is string
+        && request.resource.data.nameKey is string
+        && request.resource.data.email is string
+        && request.resource.data.answers is map
+        && request.resource.data.answeredCount is int
+        && request.resource.data.score is int
+        && request.resource.data.totalPoints == 45
+        && request.resource.data.submitted is bool
+        && request.resource.data.dueLabel is string;
+    }
+
     match /weekendQuizResponses/{responseId} {
       allow get: if true;
       allow list: if isAdmin();
       allow create, update: if validWeekendQuizResponse();
+      allow delete: if isAdmin();
+    }
+
+    match /finalExamResponses/{responseId} {
+      allow get: if true;
+      allow list: if isAdmin();
+      allow create, update: if validFinalExamResponse();
       allow delete: if isAdmin();
     }
 

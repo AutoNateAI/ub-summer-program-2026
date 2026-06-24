@@ -12,6 +12,7 @@ import {
   Users,
 } from "lucide-react";
 import { availableResources, days, type ProgramDay, type Resource } from "@/lib/resources";
+import { FinalExam } from "@/components/FinalExam";
 import { WeekendQuiz } from "@/components/WeekendQuiz";
 
 const typeStyles = {
@@ -37,6 +38,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
   const Icon = style.icon;
   const isAvailable = resource.status === "Available" && resource.href;
   const isPdf = resource.href?.endsWith(".pdf");
+  const isPageAnchor = resource.href?.startsWith("#");
 
   return (
     <article className="flex min-h-[210px] flex-col justify-between rounded-lg border border-[#d4dbe0] bg-white p-5 shadow-sm">
@@ -68,12 +70,12 @@ function ResourceCard({ resource }: { resource: Resource }) {
         <a
           href={resource.href}
           download={isPdf || undefined}
-          target={isPdf ? undefined : "_blank"}
-          rel={isPdf ? undefined : "noreferrer"}
+          target={isPdf || isPageAnchor ? undefined : "_blank"}
+          rel={isPdf || isPageAnchor ? undefined : "noreferrer"}
           className="mt-5 inline-flex h-11 items-center justify-center gap-2 rounded-md bg-[#14384c] px-4 text-sm font-black text-white transition hover:bg-[#1f516b]"
         >
           {isPdf ? <Download className="h-4 w-4" /> : <LinkIcon className="h-4 w-4" />}
-          {isPdf ? "Download PDF" : "Open Resource"}
+          {isPdf ? "Download PDF" : isPageAnchor ? "Open Exam" : "Open Resource"}
         </a>
       ) : (
         <div className="mt-5 flex h-11 items-center rounded-md border border-dashed border-[#c5ced5] px-4 text-sm font-bold text-[#65727b]">
@@ -166,6 +168,7 @@ function DaySection({
         <VideoCard day={day} />
       </div>
       {day.slug === "day-3" ? <WeekendQuiz /> : null}
+      {day.slug === "day-7" ? <FinalExam /> : null}
     </section>
   );
 }
