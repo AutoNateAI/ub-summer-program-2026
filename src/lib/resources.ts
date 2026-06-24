@@ -241,7 +241,7 @@ export const days: ProgramDay[] = [
         title: "Final Exam Review Homework",
         type: "Assignment",
         status: "Available",
-        href: "/resources/day-06/final-exam-review-homework.pdf",
+        href: "/resources/day-06/final-exam-review-homework-v1.pdf",
         detail:
           "Homework guide for reviewing the full city-budget-to-published-app workflow before tomorrow's final exam.",
       },
