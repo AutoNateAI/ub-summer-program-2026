@@ -227,7 +227,7 @@ export const days: ProgramDay[] = [
         title: "Deploy, Prompt, And Refine",
         type: "Pre-Class Notes",
         status: "Available",
-        href: "/resources/day-06/github-pages-and-context-engineering-preclass-notes.pdf",
+        href: "/resources/day-06/day-6-deploy-prompt-refine-preclass-v2.pdf",
         detail:
           "Prep notes for exporting Base44 code, deploying to GitHub Pages with GitHub Actions, preserving backend connections, and refining the app through contextual engineering.",
       },
