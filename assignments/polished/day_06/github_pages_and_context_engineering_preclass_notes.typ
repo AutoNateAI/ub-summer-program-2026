@@ -383,6 +383,40 @@ After deployment, teams will review the program they created and improve the app
 
 The app should not feel like a random set of pages. It should flow with the concepts being taught by the speakers and the transformation the program promises.
 
+This is where teams go back to the ChatGPT conversation and the Google Doc.
+
+The ChatGPT thread should become the strategy room. Base44 should become the build room.
+
+#quote-card[ChatGPT helps you understand what to improve. Base44 helps you make the improvement real in the app.]
+
+Start by asking ChatGPT to explain the program back to you in simple language.
+
+#prompt("Simple Program Explanation Prompt")[
+"Using our full conversation, explain our program in simple language.
+
+Answer these questions:
+1. What is this program about?
+2. Who is it for?
+3. What problem is it solving?
+4. What transformation is the program trying to create?
+5. Why would the city department or funding people care?
+6. Why would each partner or collaborator care?
+7. What role does our app play in making the program work?
+8. What is confusing, weak, or not specific enough yet?
+
+Explain it like we are preparing to pitch this to a city department, funder, school, or Chamber partner."
+]
+
+Then use that explanation to decide what to update.
+
+Teams should move through this loop:
+
+#compact-flow("ChatGPT To Base44 Iteration Loop", (
+  ("Google Doc + ChatGPT History", "Simple Explanation", "Weak Spots"),
+  ("Screenshots + Flow Notes", "Upgrade Prompts", "Base44 Updates"),
+  ("Test Live Site", "Collect Evidence", "Proposal Report"),
+))
+
 Ask:
 
 - What does the participant learn first?
@@ -392,12 +426,57 @@ Ask:
 - What should the app track?
 - What should the team, department, or partner be able to see?
 - What evidence proves the program worked?
+- Which app screen best proves that the program creates the promised transformation?
+- Which app screen would make a funder, city leader, or partner more interested?
 
 #compact-flow("Refinement Loop", (
-  ("Review Program", "Find Weak Spots", "Add Context"),
-  ("Prompt Base44", "Update App", "Test Live Site"),
-  ("Research Examples", "Improve Activities", "Track Impact"),
+  ("Explain Program", "Screenshot Flow", "Ask For Critique"),
+  ("Upgrade Prompt", "Base44 Update", "Deploy Again"),
+  ("Proposal Report", "Funding Logic", "Final Pitch"),
 ))
+
+= Use Screenshots To Upgrade The Flow
+
+Do not only describe the app to ChatGPT. Show it.
+
+Take screenshots of the important parts of the app:
+
+- Landing page
+- Program overview
+- Day 1 activity
+- Day 2 activity
+- Day 3 activity
+- Intake or reflection form
+- Progress tracker
+- Partner/resource page
+- Organizer dashboard
+- Impact metrics
+- Final showcase/report
+
+Upload the screenshots to ChatGPT with your Google Doc research and ask for upgrades.
+
+#prompt("Screenshot Flow Critique Prompt")[
+"I am uploading screenshots of our current app flow plus our program research.
+
+Act as a program strategist, funder reviewer, instructional designer, and software product architect.
+
+Review the screenshots and tell us:
+1. What story does the app currently tell?
+2. Where does the flow feel confusing or weak?
+3. Which screens do not clearly connect to the program transformation?
+4. Which activities feel too passive?
+5. Which screens would fail to impress a city department, funder, or partner?
+6. What data are we missing to prove the program works?
+7. What should we ask Base44 to upgrade first?
+
+Give us a prioritized upgrade list and write Base44-ready prompts for the top five improvements."
+]
+
+This makes the work visual. Students can point to a real screen and ask:
+
+#callout("Screen-by-screen question")[
+  What would make this screen more useful, more interactive, more convincing, or more connected to the program transformation?
+]
 
 = Make Activities More Interactive
 
@@ -412,6 +491,20 @@ An activity is not just text on a page. A strong activity asks the user to do so
   [Write a reflection], [Use guided prompts with saved progress and feedback.],
   [Look at resources], [Choose a partner resource and explain how it helps.],
   [Finish the program], [Submit a final artifact, plan, pitch, or showcase item.],
+))
+
+Teams can also ask ChatGPT what JavaScript packages could make the activities feel more exciting and useful.
+
+This does not mean adding random effects. The package should support the learning goal.
+
+#pro-table((1fr, 1.7fr), (
+  [#text(fill: white)[Tool Idea]], [#text(fill: white)[How It Could Support The Activity]],
+  [Three.js], [Create 3D scenes, interactive maps, simulations, product models, journey worlds, or visual metaphors for the transformation.],
+  [React Flow], [Build drag-and-drop process maps, partner ecosystems, program flows, or decision trees.],
+  [D3.js or Recharts], [Show impact metrics, budget comparisons, participant progress, partner ROI, and dashboard data.],
+  [Framer Motion], [Make activity transitions, progress feedback, and completed states feel polished and responsive.],
+  [Map libraries], [Show local resources, partner locations, service areas, or neighborhood opportunity maps.],
+  [Canvas tools], [Let participants sketch, annotate, build boards, or create visual plans inside the app.],
 ))
 
 #prompt("Activity Refinement Prompt")[
@@ -432,6 +525,84 @@ Improve the app so each activity includes:
 - A progress state
 - A connection to the program transformation
 - Data that helps organizers understand impact"
+]
+
+#prompt("Three.js And JS Package Upgrade Prompt")[
+"Review our program and app activities.
+
+We want to make the activities more exciting, interactive, and useful without adding random decoration.
+
+Suggest ways we could use Three.js or other JavaScript packages to improve the learning experience.
+
+For each idea, explain:
+- Which activity it improves
+- What the participant does
+- Why it supports the transformation
+- What data the app should collect
+- Which package or technique could help
+- Whether this is MVP, nice-to-have, or too advanced for now
+
+Then write a Base44-ready prompt for the best interactive upgrade."
+]
+
+= ChatGPT First, Base44 Second
+
+The workflow today should be:
+
+1. Bring research and screenshots into ChatGPT.
+2. Ask ChatGPT to explain the program simply.
+3. Ask ChatGPT to identify weak spots in the flow.
+4. Ask ChatGPT for upgrades that improve transformation, funding logic, partner ROI, and app interaction.
+5. Copy the best upgrade prompt into Base44.
+6. Let Base44 update the app.
+7. Test the live site again after deployment.
+8. Save the before/after notes in the Google Doc.
+
+#callout("Why this order matters")[
+  If you ask Base44 to update the app before ChatGPT helps you understand the program logic, you may get prettier screens that still do not prove the program works. Think first, then build.
+]
+
+= Final Opportunity Proposal Report
+
+The final deliverable is not only the app.
+
+Teams should use their Google Doc, ChatGPT conversation, screenshots, research findings, and deployed app to create a final opportunity proposal report.
+
+This report should explain why the opportunity is real, why the program is practical, and how the application drives the activities and transformations the program is designed to create.
+
+#pro-table((1fr, 1.7fr), (
+  [#text(fill: white)[Report Section]], [#text(fill: white)[What It Should Prove]],
+  [Opportunity overview], [The team found a real department priority, budget signal, or community problem.],
+  [Department and funding fit], [The program connects to what the city, school, funder, or demand manager already cares about.],
+  [Target audience], [The team knows who the program serves and what starting problem they face.],
+  [Program transformation], [The three-day experience moves participants from a clear starting point to a clear ending outcome.],
+  [Partner model], [The collaborators each have a role, contribution, and reason to participate.],
+  [Application role], [The app is necessary because it guides activities, collects data, tracks progress, and shows impact.],
+  [Activity flow], [Each activity is interactive and connected to the transformation.],
+  [Impact metrics], [The team can explain what data proves the program is working.],
+  [Screenshots and live link], [The proposal shows the actual app, not just an idea.],
+  [Next iteration], [The team knows what to improve after feedback from participants, partners, or funding people.],
+))
+
+#prompt("Opportunity Proposal Report Prompt")[
+"Using our Google Doc, our ChatGPT conversation, our app screenshots, and our deployed app link, help us create a final opportunity proposal report.
+
+The audience is a city department, funding group, school leader, Chamber partner, or program manager.
+
+The report should explain:
+1. The local opportunity we found
+2. The department priority or funding logic behind it
+3. The target audience and starting problem
+4. The transformation our three-day program creates
+5. The partner/collaborator model
+6. Why each partner would care
+7. How the application drives the activities
+8. How the app tracks progress and impact
+9. What screenshots prove the app is real
+10. What data would show the program worked
+11. What we would improve next with more time
+
+Make the report clear, professional, practical, and appropriate for funding people."
 ]
 
 = Refinement Prompt Stack
