@@ -279,8 +279,42 @@ export const days: ProgramDay[] = [
       },
     ],
   },
-  ...Array.from({ length: 2 }, (_, index) => {
-    const day = index + 8;
+  {
+    slug: "day-8",
+    label: "Day 8",
+    date: "June 26",
+    title: "TRIO Olympics AI Game Jam",
+    ogImage: "/og/day-08.png",
+    ogTitle: "Day 8: TRIO Olympics AI Game Jam",
+    ogDescription:
+      "Build a Zelda-like browser game in Replit by using ChatGPT or Gemini as the creative director and Replit AI as the software engineer.",
+    resources: [
+      {
+        title: "TRIO Olympics Game Jam",
+        type: "Class Notes",
+        status: "Available",
+        href: "/resources/day-08/trio-olympics-ai-game-jam.pdf",
+        detail:
+          "Competition guide with theme, rules, timeline, judging rubric, digital-legos explanation, starter prompts, and arcade playtest flow.",
+      },
+      {
+        title: "AI Game Prompt Repo",
+        type: "Assignment",
+        status: "Available",
+        href: "/trio-olympics/",
+        detail:
+          "Copy-ready prompts for ChatGPT, Gemini, and Replit AI to plan, hand off, build, debug, polish, and present a Zelda-like TRIO game.",
+      },
+      {
+        title: "Pre-Class Notes",
+        type: "Pre-Class Notes",
+        status: "Coming Soon",
+        detail: "Check this page before class.",
+      },
+    ],
+  },
+  ...Array.from({ length: 1 }, (_, index) => {
+    const day = index + 9;
     const slug = `day-${day}`;
 
     return {

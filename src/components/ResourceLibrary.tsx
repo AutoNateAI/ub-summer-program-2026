@@ -9,8 +9,10 @@ import {
   Play,
   Sparkles,
   Target,
+  Trophy,
   Users,
 } from "lucide-react";
+import Link from "next/link";
 import { availableResources, days, type ProgramDay, type Resource } from "@/lib/resources";
 import { FinalExam } from "@/components/FinalExam";
 import { WeekendQuiz } from "@/components/WeekendQuiz";
@@ -243,6 +245,59 @@ export function ResourceLibrary({ focusedDaySlug }: { focusedDaySlug?: string })
                     <Icon className="h-5 w-5" />
                   </span>
                   <p className="text-sm leading-6 text-[#dbe8ed]">{text as string}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-8 sm:px-8">
+        <div className="overflow-hidden rounded-lg border border-[#14384c] bg-[#071821] text-white shadow-sm">
+          <div className="grid gap-6 p-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:p-8">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-md border border-[#ffd56a]/30 bg-[#ffd56a]/10 px-3 py-1 text-xs font-black uppercase tracking-[0.1em] text-[#ffd56a]">
+                <Trophy className="h-4 w-4" />
+                Today · June 26
+              </div>
+              <h2 className="mt-4 text-3xl font-black tracking-tight sm:text-4xl">
+                TRIO Olympics: AI Game Jam
+              </h2>
+              <p className="mt-3 max-w-3xl text-sm leading-6 text-[#c9d9df]">
+                Build a Zelda-like browser game in Replit. Use ChatGPT or Gemini
+                to plan the game, create the AI handoff, and refine your prompts.
+                Then use Replit AI to build, test, publish, and let classmates
+                play.
+              </p>
+              <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/trio-olympics/"
+                  className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-[#7ff8ef] px-4 text-sm font-black text-[#071821] transition hover:bg-[#b2fff8]"
+                >
+                  <Sparkles className="h-4 w-4" />
+                  Open Prompt Repo
+                </Link>
+                <a
+                  href="/resources/day-08/trio-olympics-ai-game-jam.pdf"
+                  download
+                  className="inline-flex h-11 items-center justify-center gap-2 rounded-md border border-white/20 px-4 text-sm font-black text-white transition hover:bg-white/10"
+                >
+                  <Download className="h-4 w-4" />
+                  Download Rules PDF
+                </a>
+              </div>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+              {[
+                ["Think", "ChatGPT / Gemini"],
+                ["Build", "Replit AI"],
+                ["Add Legos", "HTML + CSS + JS + Phaser / Three / p5"],
+              ].map(([title, detail]) => (
+                <div key={title} className="rounded-md border border-white/15 bg-white/8 p-4">
+                  <p className="text-sm font-black uppercase tracking-[0.08em] text-[#ffd56a]">
+                    {title}
+                  </p>
+                  <p className="mt-1 text-sm leading-5 text-[#dbe8ed]">{detail}</p>
                 </div>
               ))}
             </div>
