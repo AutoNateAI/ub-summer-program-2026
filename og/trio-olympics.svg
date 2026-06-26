@@ -1,0 +1,84 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630">
+      <stop stop-color="#071821"/>
+      <stop offset="0.52" stop-color="#123d50"/>
+      <stop offset="1" stop-color="#08141b"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#ffd56a"/>
+      <stop offset="1" stop-color="#d99a2b"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#7ff8ef"/>
+      <stop offset="1" stop-color="#277c86"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(900 285) rotate(90) scale(310 410)">
+      <stop stop-color="#48f5dd" stop-opacity="0.46"/>
+      <stop offset="0.58" stop-color="#2ca6a7" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#0b2231" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" stroke="#8de9e2" stroke-opacity="0.08"/>
+    </pattern>
+    <filter id="blur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect x="520" y="14" width="646" height="602" rx="48" fill="url(#glow)"/>
+
+  <g opacity="0.92">
+    <path d="M684 138H1068V522H684V138Z" fill="#061722" fill-opacity="0.44" stroke="#7ff8ef" stroke-opacity="0.28" stroke-width="3"/>
+    <path d="M684 266H1068" stroke="#7ff8ef" stroke-opacity="0.18" stroke-width="3"/>
+    <path d="M684 394H1068" stroke="#7ff8ef" stroke-opacity="0.18" stroke-width="3"/>
+    <path d="M812 138V522" stroke="#7ff8ef" stroke-opacity="0.18" stroke-width="3"/>
+    <path d="M940 138V522" stroke="#7ff8ef" stroke-opacity="0.18" stroke-width="3"/>
+
+    <rect x="705" y="160" width="86" height="86" rx="16" fill="#123647" stroke="#7ff8ef" stroke-opacity="0.35"/>
+    <rect x="842" y="168" width="54" height="54" rx="10" fill="url(#gold)"/>
+    <rect x="976" y="162" width="66" height="96" rx="14" fill="#123647" stroke="#7ff8ef" stroke-opacity="0.35"/>
+    <rect x="720" y="300" width="74" height="46" rx="10" fill="url(#cyan)"/>
+    <rect x="854" y="290" width="72" height="72" rx="36" fill="#ffd56a"/>
+    <rect x="980" y="300" width="52" height="52" rx="10" fill="#123647" stroke="#7ff8ef" stroke-opacity="0.35"/>
+    <rect x="722" y="430" width="74" height="62" rx="12" fill="#123647" stroke="#7ff8ef" stroke-opacity="0.35"/>
+    <rect x="858" y="426" width="58" height="58" rx="12" fill="url(#cyan)"/>
+    <rect x="964" y="424" width="92" height="72" rx="16" fill="#123647" stroke="#7ff8ef" stroke-opacity="0.35"/>
+  </g>
+
+  <g filter="url(#blur)" opacity="0.5">
+    <circle cx="740" cy="238" r="42" fill="#7ff8ef"/>
+    <circle cx="885" cy="326" r="45" fill="#ffd56a"/>
+    <circle cx="1020" cy="214" r="38" fill="#7ff8ef"/>
+  </g>
+
+  <g transform="translate(805 205)">
+    <ellipse cx="85" cy="270" rx="158" ry="25" fill="#06141c" opacity="0.58"/>
+    <path d="M72 50L40 90H104L72 50Z" fill="#7ff8ef"/>
+    <circle cx="72" cy="43" r="30" fill="#c98745"/>
+    <path d="M46 43C51 16 78 4 101 22C93 17 77 18 46 43Z" fill="#10212d"/>
+    <path d="M32 230L48 112H101L124 230H92L84 165H64L59 230H32Z" fill="#1f5365"/>
+    <path d="M110 116L166 78" stroke="#7ff8ef" stroke-width="15" stroke-linecap="round"/>
+    <rect x="160" y="51" width="72" height="52" rx="9" transform="rotate(9 160 51)" fill="#0a1821" stroke="#ffd56a" stroke-width="4"/>
+    <path d="M53 110L11 77" stroke="#ffd56a" stroke-width="14" stroke-linecap="round"/>
+    <circle cx="-8" cy="67" r="20" fill="#7f4d34"/>
+    <path d="M-42 230L-25 112H13L34 230H2L-5 170H-15L-22 230H-42Z" fill="#163d50"/>
+  </g>
+
+  <rect x="58" y="58" width="594" height="468" rx="30" fill="#061722" fill-opacity="0.72" stroke="#7ff8ef" stroke-opacity="0.24"/>
+  <text x="92" y="112" fill="#ffd56a" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="800" letter-spacing="1.2">GVSU TRIO UPWARD BOUND</text>
+  <text x="92" y="148" fill="#cfe8ef" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">TRIO Olympics</text>
+  <text x="92" y="212" fill="#7ff8ef" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="900">AI GAME JAM</text>
+  <text x="92" y="282" fill="white" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="900" letter-spacing="-1.4">Build A Zelda-Like</text>
+  <text x="92" y="350" fill="white" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="900" letter-spacing="-1.4">Web Game</text>
+  <rect x="92" y="378" width="88" height="8" rx="4" fill="url(#gold)"/>
+  <text x="92" y="430" fill="#dbe8ed" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="700">Use ChatGPT or Gemini to plan.</text>
+  <text x="92" y="464" fill="#dbe8ed" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="700">Use Replit AI to build, test, and share.</text>
+
+  <rect x="58" y="548" width="242" height="40" rx="20" fill="#7ff8ef"/>
+  <text x="86" y="574" fill="#071821" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="900" letter-spacing="0.7">UB.AUTONATEAI.COM</text>
+  <rect x="316" y="548" width="218" height="40" rx="20" fill="#ffd56a"/>
+  <text x="344" y="574" fill="#071821" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="900" letter-spacing="0.7">PROMPT REPO</text>
+</svg>
