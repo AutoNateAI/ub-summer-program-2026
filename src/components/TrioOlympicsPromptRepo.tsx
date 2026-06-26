@@ -239,7 +239,7 @@ export function TrioOlympicsPromptRepo() {
                 game so other students can play it.
               </p>
               <a
-                href="https://replit.com/signup"
+                href="https://replit.com/?authModal=signup"
                 target="_blank"
                 rel="noreferrer"
                 className="mt-5 inline-flex h-12 items-center justify-center gap-2 rounded-md bg-[#ffd56a] px-5 text-sm font-black text-[#071821] transition hover:bg-[#ffe08a]"
