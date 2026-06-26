@@ -7,6 +7,7 @@ import {
   Clock,
   Code2,
   Download,
+  ExternalLink,
   Gamepad2,
   Library,
   MapPin,
@@ -62,6 +63,14 @@ const gameJamRules = [
   "Your team may use HTML, CSS, and JavaScript only, or add Phaser.js, Three.js, or p5.js as digital Lego add-ons.",
   "Test the game before judging. A smaller working game beats a huge broken game.",
   "During arcade playtesting, students may not vote for their own team.",
+];
+
+const replitSignupSteps = [
+  "Click Open Replit. It will open in a new browser tab.",
+  "Choose Continue with Google if you can. This is the preferred sign-up path for class.",
+  "If Google login is not available, choose email sign up and follow the verification steps.",
+  "After you are logged in, create a new project or use Replit AI to start building from your game prompt.",
+  "Keep this prompt repo open in the original tab so you can copy prompts while Replit builds in the new tab.",
 ];
 
 const judgingCriteria = [
@@ -208,6 +217,60 @@ export function TrioOlympicsPromptRepo() {
               pieces teams can ask Replit to use when they want stronger game
               systems, 3D scenes, or visual effects.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 pb-8 sm:px-8">
+        <div className="rounded-lg border border-[#d4dbe0] bg-[#071821] p-5 text-white shadow-sm">
+          <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.1em] text-[#ffd56a]">
+                Replit Briefing
+              </p>
+              <h2 className="mt-1 text-2xl font-black">
+                Your AI Coding Studio
+              </h2>
+              <p className="mt-3 text-sm leading-6 text-[#dbe8ed]">
+                Replit is a browser-based coding workspace. For today, it is
+                where your team will turn the game plan from ChatGPT or Gemini
+                into a working web game. Replit AI can create files, write HTML,
+                CSS, and JavaScript, fix bugs, add effects, and help deploy the
+                game so other students can play it.
+              </p>
+              <a
+                href="https://replit.com/signup"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-5 inline-flex h-12 items-center justify-center gap-2 rounded-md bg-[#ffd56a] px-5 text-sm font-black text-[#071821] transition hover:bg-[#ffe08a]"
+              >
+                <ExternalLink className="h-4 w-4" />
+                Open Replit
+              </a>
+            </div>
+
+            <div className="rounded-lg border border-white/15 bg-white/8 p-4">
+              <h3 className="text-lg font-black">Sign-Up Instructions</h3>
+              <div className="mt-4 grid gap-2">
+                {replitSignupSteps.map((step, index) => (
+                  <div
+                    key={step}
+                    className="grid grid-cols-[32px_1fr] gap-3 rounded-md border border-white/15 bg-white/8 p-3"
+                  >
+                    <span className="flex h-8 w-8 items-center justify-center rounded-md bg-[#7ff8ef] text-sm font-black text-[#071821]">
+                      {index + 1}
+                    </span>
+                    <p className="text-sm font-semibold leading-6 text-[#dbe8ed]">
+                      {step}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-4 rounded-md bg-[#ffd56a]/10 p-3 text-sm font-bold leading-6 text-[#ffd56a]">
+                Preferred login: Continue with Google. Email sign up also works
+                if Google is not available.
+              </p>
+            </div>
           </div>
         </div>
       </section>
